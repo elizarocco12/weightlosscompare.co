@@ -10,7 +10,6 @@
 <meta property="og:description" content="UK's leading independent weight loss price comparison. Compare GLP-1 injections, oral pills, meal plans, slimming clubs and surgery. Prices updated weekly."/>
 <meta property="og:url" content="https://weightlosscompare.co"/>
 <meta property="og:type" content="website"/>
-<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZHYKFV088"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ZHYKFV088');</script>
 <style>
@@ -42,22 +41,15 @@ button{cursor:pointer;font-family:inherit}
 .live-dot{display:inline-block;width:7px;height:7px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;margin-right:5px;vertical-align:middle}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* STATS BAR */
-.stats-bar{background:#fff;border-bottom:2px solid var(--gray-100);overflow:hidden}
-.stats-bar-inner{display:flex;overflow-x:auto;scrollbar-width:none;max-width:1200px;margin:0 auto;padding:.6rem 1rem;gap:1.5rem;align-items:center;white-space:nowrap}
-.stats-bar-inner::-webkit-scrollbar{display:none}
-.stat-item{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--gray-600);flex-shrink:0}
-.stat-item strong{color:var(--gray-900)}
-.stat-sep{color:var(--gray-300);flex-shrink:0}
-
 /* TRUST BAR */
-.trust-bar{background:#fff;border-bottom:1px solid #bbf7d0}
-.trust-bar-inner{max-width:1200px;margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.trust-bar{background:#fff;border-bottom:2px solid #bbf7d0}
+.trust-bar-inner{max-width:1200px;margin:0 auto;padding:.9rem 1rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
 .trust-item{display:flex;flex-direction:column;align-items:center;line-height:1.2}
-.trust-num{font-size:.95rem;font-weight:800;color:#15803d;display:flex;align-items:center;gap:.3rem}
-.trust-label{font-size:.67rem;color:var(--gray-500);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-.trust-sep{width:1px;height:28px;background:var(--gray-200)}
-@media(max-width:480px){.trust-sep{display:none}.trust-bar-inner{gap:1rem}}
+.trust-num{font-size:1.4rem;font-weight:900;color:#15803d;display:flex;align-items:center;gap:.3rem;letter-spacing:-.02em}
+.trust-num.highlight{font-size:1.7rem;color:#16a34a}
+.trust-label{font-size:.68rem;color:var(--gray-500);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.trust-sep{width:1px;height:36px;background:var(--gray-200)}
+@media(max-width:500px){.trust-sep{display:none}.trust-bar-inner{gap:1rem}.trust-num{font-size:1.1rem}.trust-num.highlight{font-size:1.3rem}}
 
 /* CALC BANNER */
 .calc-banner{background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;padding:1rem 1rem}
@@ -121,7 +113,7 @@ td.price.na{color:var(--gray-300);font-weight:400}
 .info-card p{font-size:.82rem;color:var(--gray-600);line-height:1.5}
 .price-range{margin-top:.6rem;font-size:.85rem;font-weight:700;color:var(--primary)}
 .tag{display:inline-block;border-radius:6px;padding:.15rem .55rem;font-size:.7rem;font-weight:700;margin-bottom:.35rem}
-.tag-purple{background:var(--primary-light);color:var(--primary)}
+.tag-purple{background:var(--primary-light);color:var(--primary-dark)}
 .tag-teal{background:var(--teal-light);color:var(--teal-dark)}
 .tag-green{background:var(--green-light);color:var(--green)}
 .tag-red{background:var(--red-light);color:var(--red)}
@@ -202,9 +194,23 @@ td.price.na{color:var(--gray-300);font-weight:400}
 
 /* CALCULATOR EMBEDDED */
 .calc-embed-wrap{background:#f0fdfa;border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem}
-.calc-embed-wrap .intro-banner{background:linear-gradient(135deg,#0d9488,#0f766e);color:white;text-align:center;padding:1.5rem 1rem;border-radius:var(--radius);margin-bottom:1.25rem}
-.calc-embed-wrap .intro-banner h2{font-size:1.2rem;font-weight:800;margin-bottom:.35rem}
-.calc-embed-wrap .intro-banner p{font-size:.85rem;opacity:.9;max-width:480px;margin:0 auto}
+.estep{display:none}
+.estep.active{display:block}
+
+/* CALC EMAIL GATE */
+.calc-email-gate{background:#fff;border-radius:12px;padding:2rem 1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center;max-width:480px;margin:0 auto}
+.calc-email-gate .gate-icon{font-size:3rem;margin-bottom:.75rem}
+.calc-email-gate h3{font-size:1.15rem;font-weight:800;color:var(--gray-900);margin-bottom:.4rem}
+.calc-email-gate p{font-size:.85rem;color:var(--gray-500);margin-bottom:1.25rem;line-height:1.5}
+.gate-email-input{display:flex;gap:.5rem;margin-bottom:.75rem}
+.gate-email-input input{flex:1;padding:.65rem .9rem;border:2px solid #86efac;border-radius:8px;font-size:.9rem;outline:none}
+.gate-email-input input:focus{border-color:var(--primary)}
+.gate-email-input button{padding:.65rem 1.1rem;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;font-size:.88rem;white-space:nowrap}
+.gate-email-input button:hover{background:var(--primary-dark)}
+.gate-divider{display:flex;align-items:center;gap:.75rem;margin:.25rem 0 .75rem;color:var(--gray-400);font-size:.78rem}
+.gate-divider::before,.gate-divider::after{content:'';flex:1;height:1px;background:var(--gray-200)}
+.gate-skip{background:none;border:1.5px solid var(--gray-200);color:var(--gray-600);border-radius:8px;padding:.6rem 1.1rem;font-size:.85rem;font-weight:600;width:100%;transition:all .2s}
+.gate-skip:hover{border-color:var(--gray-400);color:var(--gray-800)}
 
 /* POPUP */
 #calcPopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;align-items:center;justify-content:center;padding:1rem}
@@ -216,8 +222,8 @@ td.price.na{color:var(--gray-300);font-weight:400}
 .calc-popup-header p{font-size:.82rem;color:var(--gray-500);margin-bottom:1rem}
 .calc-popup-features{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
 .calc-popup-feat{background:var(--gray-50);border-radius:8px;padding:.5rem .75rem;font-size:.78rem;font-weight:600;color:var(--gray-700)}
-.calc-popup-cta{display:block;width:100%;background:var(--teal);color:#fff;border:none;border-radius:8px;padding:.75rem;font-size:.95rem;font-weight:700;margin-bottom:.75rem}
-.calc-popup-cta:hover{background:var(--teal-dark)}
+.calc-popup-cta{display:block;width:100%;background:var(--primary);color:#fff;border:none;border-radius:8px;padding:.75rem;font-size:.95rem;font-weight:700;margin-bottom:.75rem}
+.calc-popup-cta:hover{background:var(--primary-dark)}
 .calc-popup-skip{display:block;text-align:center;font-size:.78rem;color:var(--gray-400);cursor:pointer}
 .calc-popup-skip:hover{color:var(--gray-600)}
 
@@ -257,7 +263,6 @@ footer a{color:var(--gray-300)}
   .surgery-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:1fr}
   .email-row{flex-direction:column}
-  .stats-bar-inner{font-size:.72rem}
 }
 </style>
 </head>
@@ -278,18 +283,28 @@ footer a{color:var(--gray-300)}
   </div>
 </header>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stats-bar-inner">
-    <div class="stat-item"><span>💉</span><span>Cheapest Mounjaro 2.5mg: <strong>£148 (Chemist4U)</strong></span></div>
-    <span class="stat-sep">·</span>
-    <div class="stat-item"><span>💉</span><span>Cheapest Wegovy 0.25mg: <strong>£98.98 (Asda)</strong></span></div>
-    <span class="stat-sep">·</span>
-    <div class="stat-item"><span>💊</span><span>Orlistat from: <strong>£17.49/mo</strong></span></div>
-    <span class="stat-sep">·</span>
-    <div class="stat-item"><span>🏅</span><span>Slimming clubs from: <strong>£11/mo</strong></span></div>
-    <span class="stat-sep">·</span>
-    <div class="stat-item"><span>✂️</span><span>Gastric sleeve from: <strong>£8,995</strong></span></div>
+<!-- TRUST / SUBSCRIBER BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-num highlight" data-target="5000" data-suffix="+">0</div>
+      <div class="trust-label">Subscribers</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-num" data-target="26" data-suffix="+">0</div>
+      <div class="trust-label">Providers compared</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-num" style="font-size:1rem"><span class="live-dot" style="width:7px;height:7px;background:#16a34a;display:inline-block;border-radius:50%;animation:blink 2s infinite;margin-right:4px"></span>June 2026</div>
+      <div class="trust-label">Last updated</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-num" data-target="100" data-suffix="%">0</div>
+      <div class="trust-label">Independent</div>
+    </div>
   </div>
 </div>
 
@@ -301,19 +316,6 @@ footer a{color:var(--gray-300)}
       <p>Answer 3 quick questions — get a personalised comparison with timelines, costs and eligibility for every UK weight loss method.</p>
     </div>
     <button class="calc-banner-btn" onclick="switchToCalc()">Take the free quiz →</button>
-  </div>
-</div>
-
-<!-- TRUST / SUBSCRIBER BAR -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item"><span class="trust-num">5,000+</span><span class="trust-label">Subscribers</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="trust-num">26+</span><span class="trust-label">Providers compared</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="trust-num"><span class="live-dot" style="width:6px;height:6px;background:#16a34a"></span> June 2026</span><span class="trust-label">Last updated</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="trust-num">100%</span><span class="trust-label">Independent</span></div>
   </div>
 </div>
 
@@ -376,16 +378,16 @@ footer a{color:var(--gray-300)}
     </div>
     <div class="pill-hero-cta">
       <div class="pill-hero-icon">💊</div>
-      <button class="pill-notify-btn" onclick="[...document.querySelectorAll('.tab-btn')].find(b=>b.textContent.includes('Pills'))?.click()">Compare Oral GLP-1 Pills</button>
+      <button class="pill-notify-btn" onclick="switchTab('pills',document.querySelectorAll('.tab-btn')[1])">Compare Oral Pills →</button>
     </div>
   </div>
 
-  <div id="inlineEmailWrap" class="email-form-wrap" style="margin-top:1rem">
-    <h3>📬 Get Weekly Price Updates</h3>
+  <div class="email-form-wrap">
+    <h3>📬 Get weekly price alerts</h3>
     <p>Join 5,000+ subscribers getting the best UK weight loss prices every Monday.</p>
     <div class="email-row">
       <input type="email" id="inlineEmail" placeholder="your@email.com"/>
-      <button onclick="handleInlineEmail()">Get Updates</button>
+      <button onclick="handleInlineEmail()">Notify me</button>
     </div>
   </div>
 </div>
@@ -401,40 +403,29 @@ footer a{color:var(--gray-300)}
     <table class="pills-table">
       <thead><tr><th>Medication</th><th>Type</th><th>From (monthly)</th><th>Eligibility</th><th>Evidence</th><th>Where to get</th></tr></thead>
       <tbody>
-        <tr><td><strong>Rybelsus (oral semaglutide)</strong></td><td><span class="tag tag-purple">Oral GLP-1</span></td><td><strong>£149/mo</strong></td><td>BMI 30+ or 27+ with condition</td><td>~15% weight loss (STEP trials)</td><td>Online doctor / GP</td></tr>
+        <tr><td><strong>Rybelsus (oral semaglutide)</strong></td><td><span class="tag tag-green">Oral GLP-1</span></td><td><strong>£149/mo</strong></td><td>BMI 30+ or 27+ with condition</td><td>~15% weight loss (STEP trials)</td><td>Online doctor / GP</td></tr>
         <tr><td><strong>Orlistat (Xenical/Alli)</strong></td><td><span class="tag tag-teal">Prescription</span></td><td><strong>£17.49/mo</strong></td><td>BMI 28+ with condition or 30+</td><td>5–7% weight loss at 12mo</td><td>GP / online pharmacy</td></tr>
         <tr><td><strong>Alli (OTC Orlistat)</strong></td><td><span class="tag tag-green">Over Counter</span></td><td><strong>£29.99/mo</strong></td><td>BMI 28+ (self-assessed)</td><td>5% weight loss with low-fat diet</td><td>Boots, Superdrug, Amazon</td></tr>
-        <tr><td><strong>Naltrexone/Bupropion (Mysimba)</strong></td><td><span class="tag tag-purple">Prescription</span></td><td><strong>£89/mo</strong></td><td>BMI 30+ or 27+ with condition</td><td>5–8% weight loss at 12mo</td><td>Specialist clinics / online doctor</td></tr>
+        <tr><td><strong>Naltrexone/Bupropion (Mysimba)</strong></td><td><span class="tag tag-teal">Prescription</span></td><td><strong>£89/mo</strong></td><td>BMI 30+ or 27+ with condition</td><td>5–8% weight loss at 12mo</td><td>Specialist clinics / online doctor</td></tr>
         <tr><td><strong>Phentermine (not licensed UK)</strong></td><td><span class="tag tag-red">Unlicensed</span></td><td>Not recommended</td><td>N/A</td><td>Limited / risk profile</td><td>Not available in UK</td></tr>
       </tbody>
     </table>
   </div>
   <div class="info-grid">
-    <div class="info-card">
-      <span class="tag tag-purple">Oral GLP-1</span>
-      <h3>Rybelsus (Oral Semaglutide)</h3>
-      <p>The first oral GLP-1 medication approved for weight management in the UK. Same active ingredient as Wegovy injection but taken as a daily tablet. Available from online doctors from ~£149/month.</p>
-      <div class="price-range">From £149/month</div>
-    </div>
-    <div class="info-card">
-      <span class="tag tag-teal">Prescription</span>
-      <h3>Orlistat (Prescription)</h3>
-      <p>Blocks ~30% of dietary fat absorption. Available on NHS prescription or privately. Must be combined with a reduced-calorie diet to be effective. Most cost-effective prescription option available.</p>
-      <div class="price-range">From £17.49/month</div>
-    </div>
-    <div class="info-card">
-      <span class="tag tag-green">OTC</span>
-      <h3>Alli (OTC Orlistat 60mg)</h3>
-      <p>Lower-dose version of orlistat available without prescription from pharmacies. Reduces fat absorption, must be combined with a calorie-controlled low-fat diet. Half the prescription dose.</p>
-      <div class="price-range">From £29.99/month</div>
-    </div>
-    <div class="info-card">
-      <span class="tag tag-purple">Prescription</span>
-      <h3>Mysimba (Naltrexone/Bupropion)</h3>
-      <p>Combination pill that targets the brain's reward system to reduce appetite and food cravings. NICE-approved for adults with BMI 30+ or 27+ with weight-related conditions.</p>
-      <div class="price-range">From £89/month</div>
-    </div>
+    <div class="info-card"><span class="tag tag-green">Oral GLP-1</span><h3>Rybelsus (Oral Semaglutide)</h3><p>The first oral GLP-1 medication approved for weight management in the UK. Same active ingredient as Wegovy injection but taken as a daily tablet. Available from online doctors from ~£149/month.</p><div class="price-range">From £149/month</div></div>
+    <div class="info-card"><span class="tag tag-teal">Prescription</span><h3>Orlistat (Prescription)</h3><p>Blocks ~30% of dietary fat absorption. Available on NHS prescription or privately. Must be combined with a reduced-calorie diet to be effective. Most cost-effective prescription option available.</p><div class="price-range">From £17.49/month</div></div>
+    <div class="info-card"><span class="tag tag-green">OTC</span><h3>Alli (OTC Orlistat 60mg)</h3><p>Lower-dose version of orlistat available without prescription from pharmacies. Reduces fat absorption, must be combined with a calorie-controlled low-fat diet. Half the prescription dose.</p><div class="price-range">From £29.99/month</div></div>
+    <div class="info-card"><span class="tag tag-teal">Prescription</span><h3>Mysimba (Naltrexone/Bupropion)</h3><p>Combination pill that targets the brain's reward system to reduce appetite and food cravings. NICE-approved for adults with BMI 30+ or 27+ with weight-related conditions.</p><div class="price-range">From £89/month</div></div>
   </div>
+</div>
+
+<!-- CALCULATOR TAB -->
+<div id="tab-calc" class="section">
+  <div class="section-head">
+    <h2>🧮 Weight Loss Method Finder</h2>
+    <p>Answer 3 quick questions to get your personalised comparison — timelines, costs and eligibility</p>
+  </div>
+  <div id="calcEmbedContainer"></div>
 </div>
 
 <!-- MEAL PLANS TAB -->
@@ -463,7 +454,7 @@ footer a{color:var(--gray-300)}
   </div>
   <div class="club-table-wrap">
     <table class="club-table">
-      <thead><tr><th>Club</th><th>Format</th><th>Monthly cost</th><th>Annual cost</th><th>Trial</th><th>Best for</th><th>Rating</th></tr></thead>
+      <thead><tr><th>Club</th><th>Format</th><th>Monthly Cost</th><th>Annual Cost</th><th>Free Trial</th><th>Best For</th><th>Rating</th></tr></thead>
       <tbody id="clubBody"></tbody>
     </table>
   </div>
@@ -472,72 +463,71 @@ footer a{color:var(--gray-300)}
 <!-- SURGERY TAB -->
 <div id="tab-surgery" class="section">
   <div class="section-head">
-    <h2>✂️ Weight Loss Surgery UK 2026</h2>
-    <p>Private bariatric surgery costs, outcomes and NHS eligibility</p>
+    <h2>✂️ Bariatric Surgery Comparison</h2>
+    <p>Compare NHS and private costs, expected weight loss and recovery times</p>
     <div class="update-badge">✅ Prices updated June 2026</div>
   </div>
   <div class="surgery-grid" id="surgeryGrid"></div>
-  <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.85rem 1rem;font-size:.8rem;color:#7f1d1d;line-height:1.6">
-    ⚕️ <strong>NHS bariatric surgery</strong> is available free for adults with BMI ≥40 (or ≥35 with obesity-related conditions) who have tried other weight loss interventions. Waiting times are typically 18–36 months. Ask your GP for a referral to a Tier 3 weight management service.
-  </div>
+  <div style="background:#fff;border-radius:var(--radius);border:1px solid var(--gray-200);padding:1.25rem;font-size:.82rem;color:var(--gray-600);line-height:1.6"><strong>NHS Surgery:</strong> Available for BMI 40+ (or 35+ with obesity-related condition) via Tier 3 weight management referral. NHS waiting lists are typically 2–4 years. Private surgery prices shown are averages — always get a formal quote from a specialist centre.</div>
 </div>
 
 <!-- NHS REFERRALS TAB -->
 <div id="tab-referrals" class="section">
   <div class="section-head">
-    <h2>🏥 NHS Weight Loss Referrals &amp; Free Options</h2>
-    <p>Free and subsidised weight loss support available through the NHS in 2026</p>
-    <div class="update-badge">✅ Updated June 2026</div>
+    <h2>🏥 NHS Weight Loss Referrals</h2>
+    <p>Free and subsidised weight loss support available through the NHS</p>
   </div>
   <div id="referralsContent"></div>
-</div>
-
-<!-- CALCULATOR TAB -->
-<div id="tab-calc" class="section">
-  <div class="section-head">
-    <h2>🧮 Weight Loss Method Finder &amp; Cost Calculator</h2>
-    <p>Answer 3 questions to get a personalised comparison — timelines, costs and eligibility</p>
-  </div>
-  <div id="calcEmbedContainer"></div>
 </div>
 
 <!-- BLOG TAB -->
 <div id="tab-blog" class="section">
   <div class="section-head">
-    <h2>📝 Weight Loss Blog &amp; Guides</h2>
-    <p>Expert guides, price breakdowns and tips for UK weight loss in 2026</p>
+    <h2>📝 Weight Loss Guides & Comparisons</h2>
+    <p>Evidence-based guides to help you choose the right weight loss method</p>
   </div>
-  <div id="blogGrid" class="blog-grid"></div>
+  <div class="blog-grid" id="blogGrid"></div>
   <div id="blogArticle"></div>
 </div>
 
 </main>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p><strong>Weight Loss Compare UK</strong> · weightlosscompare.co</p>
+    <p>Independent price comparison. Not affiliated with any provider. Not medical advice. Always consult your GP or a registered healthcare professional before starting any weight loss programme.</p>
+    <p>Prices updated June 2026 · <a href="mailto:info@weightlosscompare.co">info@weightlosscompare.co</a></p>
+    <p style="margin-top:.75rem;font-size:.7rem;color:var(--gray-600)">© 2026 Weight Loss Compare UK. All prices sourced from provider websites and may change without notice.</p>
+  </div>
+</footer>
+
 <!-- CALC POPUP -->
 <div id="calcPopup">
   <div class="calc-popup-box">
-    <button class="calc-popup-close" onclick="closeCalcPopup()" aria-label="Close">✕</button>
+    <button class="calc-popup-close" onclick="closeCalcPopup()">✕</button>
     <div class="calc-popup-header">
-      <h3>🧮 Which weight loss method suits you?</h3>
-      <p>Answer 3 quick questions — get a personalised cost estimate and timeline for every UK option.</p>
+      <div style="font-size:2rem;margin-bottom:.5rem">🎯</div>
+      <h3>Which weight loss method suits you?</h3>
+      <p>Answer 3 quick questions for a personalised comparison — timelines, costs and eligibility.</p>
     </div>
     <div class="calc-popup-features">
+      <div class="calc-popup-feat">📊 Personalised results</div>
       <div class="calc-popup-feat">💰 Real UK prices</div>
-      <div class="calc-popup-feat">📅 Months to goal</div>
+      <div class="calc-popup-feat">⏱ Timeline estimates</div>
       <div class="calc-popup-feat">✅ Eligibility check</div>
-      <div class="calc-popup-feat">💊 All methods compared</div>
     </div>
-    <button class="calc-popup-cta" onclick="switchToCalc();closeCalcPopup()">Take the free quiz →</button>
-    <span class="calc-popup-skip" onclick="closeCalcPopup()">No thanks, just browsing</span>
+    <button class="calc-popup-cta" onclick="closeCalcPopup();switchToCalc()">Take the free quiz →</button>
+    <span class="calc-popup-skip" onclick="closeCalcPopup()">No thanks, I'll browse on my own</span>
   </div>
 </div>
 
 <!-- SUCCESS POPUP -->
 <div id="successPopup">
   <div class="success-box">
-    <div style="font-size:2.5rem">✅</div>
+    <div style="font-size:2.5rem">🎉</div>
     <h3>You're subscribed!</h3>
-    <p style="font-size:.85rem;color:var(--gray-500)">We'll send you weekly price updates every Monday.</p>
+    <p style="font-size:.85rem;color:var(--gray-500)">We'll send you the best UK weight loss prices every Monday.</p>
     <button class="success-close" onclick="closePopup()">Done</button>
   </div>
 </div>
@@ -545,31 +535,17 @@ footer a{color:var(--gray-300)}
 <!-- STICKY EMAIL BAR -->
 <div id="stickyBar">
   <div class="sticky-inner">
-    <span>📬 Get weekly price alerts — free</span>
+    <span>📬 Get weekly price alerts</span>
     <input type="email" id="stickyEmail" placeholder="your@email.com"/>
     <button class="sticky-btn" onclick="handleStickyEmail()">Subscribe</button>
-    <button class="sticky-dismiss" onclick="dismissSticky()" aria-label="Dismiss">✕</button>
+    <button class="sticky-dismiss" onclick="dismissSticky()">✕</button>
   </div>
 </div>
 
 <!-- STICKY CALC TAB -->
 <div id="calcStickyTab">
-  <button class="calc-sticky-btn" onclick="switchToCalc()">🧮 FREE CALCULATOR</button>
+  <button class="calc-sticky-btn" onclick="switchToCalc()">🧮 CALCULATOR</button>
 </div>
-
-<!-- TOP EMAIL BANNER (hidden, kept for email capture) -->
-<div id="topBannerEmail" style="display:none">
-  <input type="email" id="topBannerEmailInput" placeholder="your@email.com"/>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <p><strong>Weight Loss Compare UK</strong> — weightlosscompare.co</p>
-    <p>Independent UK price comparison for GLP-1 injections, meal replacement plans, slimming clubs and bariatric surgery. Prices updated weekly.</p>
-    <p>Not medical advice. Consult a healthcare professional before starting any weight loss programme.</p>
-    <p style="margin-top:.75rem;color:var(--gray-500)">© 2026 Weight Loss Compare UK · <a href="mailto:info@weightlosscompare.co">info@weightlosscompare.co</a></p>
-  </div>
-</footer>
 
 <script>
 // ════════════════════════════════════════════════════
@@ -658,7 +634,7 @@ function render(){
 // MEAL PLANS
 // ════════════════════════════════════════════════════
 const MEAL_PLANS=[
-  {name:'Cambridge Weight Plan',type:'VLCD',dayMin:2.50,dayMax:5.00,monthMin:75,monthMax:300,cals:'415–1500',support:'1:1 Consultant',rating:4.0,desc:'Clinically proven rapid weight loss using shakes, soups and bars. Requires a local consultant. One of the UK\'s most established VLCDs since the 1980s.'},
+  {name:'Cambridge Weight Plan',type:'VLCD',dayMin:2.50,dayMax:5.00,monthMin:75,monthMax:300,cals:'415–1500',support:'1:1 Consultant',rating:4.0,desc:"Clinically proven rapid weight loss using shakes, soups and bars. Requires a local consultant. One of the UK's most established VLCDs since the 1980s."},
   {name:'LighterLife',type:'VLCD',dayMin:3.00,dayMax:6.00,monthMin:90,monthMax:180,cals:'415–800',support:'Group CBT + 1:1',rating:4.2,desc:'Combines VLCD meal replacements with group Cognitive Behavioural Therapy (CBT) sessions. Addresses emotional eating alongside rapid weight loss.'},
   {name:'Exante Diet',type:'VLCD/LCD',dayMin:1.50,dayMax:3.50,monthMin:45,monthMax:105,cals:'600–1200',support:'Online only',rating:3.8,desc:'Budget-friendly meal replacement shakes and bars available online. No consultant required. Flexible plans from 600–1200kcal.'},
   {name:'Huel',type:'LCD/Balanced',dayMin:3.00,dayMax:5.00,monthMin:90,monthMax:150,cals:'1200–2000',support:'App + community',rating:4.1,desc:'Nutritionally complete meal replacements. Popular for structured calorie-controlled eating. Not a VLCD — suitable for long-term use.'},
@@ -670,7 +646,7 @@ const MEAL_PLANS=[
 function renderMealTable(){
   const tb=document.getElementById('mealBody');
   if(!tb)return;
-  tb.innerHTML=MEAL_PLANS.map(m=>`<tr><td><strong>${m.name}</strong></td><td><span class="tag tag-purple">${m.type}</span></td><td><strong>£${m.dayMin}–£${m.dayMax}</strong>/day</td><td>£${m.monthMin}–£${m.monthMax}</td><td>${m.cals} kcal</td><td>${m.support}</td><td><span class="rating-stars">${'★'.repeat(Math.floor(m.rating))}${'☆'.repeat(5-Math.floor(m.rating))}</span> ${m.rating}</td></tr>`).join('');
+  tb.innerHTML=MEAL_PLANS.map(m=>`<tr><td><strong>${m.name}</strong></td><td><span class="tag tag-teal">${m.type}</span></td><td><strong>£${m.dayMin}–£${m.dayMax}</strong>/day</td><td>£${m.monthMin}–£${m.monthMax}</td><td>${m.cals} kcal</td><td>${m.support}</td><td><span class="rating-stars">${'★'.repeat(Math.floor(m.rating))}${'☆'.repeat(5-Math.floor(m.rating))}</span> ${m.rating}</td></tr>`).join('');
   const c=document.getElementById('mealCards');
   if(c)c.innerHTML=MEAL_PLANS.map(m=>`<div class="info-card"><div style="font-size:1.5rem;margin-bottom:.5rem">🥗</div><h3>${m.name}</h3><p>${m.desc}</p><div class="price-range">£${m.monthMin}–£${m.monthMax}/mo</div></div>`).join('');
 }
@@ -703,7 +679,7 @@ function renderSurgery(){
     {name:'Gastric Sleeve',emoji:'✂️',nhsAvail:'BMI 40+ (or 35+ with conditions)',privateFrom:'£8,995',privateTo:'£12,000',loss:'60–70% excess weight',time:'12–18 months',desc:'The stomach is reduced to about 20% of its original size. Highly effective and the most common bariatric procedure in the UK.'},
     {name:'Gastric Bypass (Roux-en-Y)',emoji:'🔀',nhsAvail:'BMI 40+ (or 35+ with conditions)',privateFrom:'£11,000',privateTo:'£15,000',loss:'70–80% excess weight',time:'12–24 months',desc:'Stomach is made smaller and rerouted around part of the small intestine. Strongest evidence for resolving type 2 diabetes.'},
     {name:'Gastric Band',emoji:'💍',nhsAvail:'BMI 40+ (or 35+ with conditions)',privateFrom:'£6,995',privateTo:'£9,000',loss:'40–50% excess weight',time:'18–24 months',desc:'An adjustable band placed around the upper stomach. Fewer complications but less weight loss than sleeve or bypass. Reversible.'},
-    {name:'Gastric Balloon',emoji:'🎈',nhsAvail:'Not available on NHS',privateFrom:'£2,500',privateTo:'£5,000',loss:'10–15% body weight',time:'6–12 months',desc:'A saline-filled balloon placed in the stomach for 6 months to reduce appetite. No surgery, but temporary — weight often returns.'},
+    {name:'Gastric Balloon',emoji:'🎈',nhsAvail:'Not available on NHS',privateFrom:'£2,500',privateTo:'£5,000',loss:'10–15% body weight',time:'6–12 months',desc:'A saline-filled balloon placed in the stomach for 6 months to reduce appetite. No surgery, but temporary — weight often returns.'}
   ];
   g.innerHTML=ops.map(o=>`<div class="surgery-card"><div style="font-size:2rem;margin-bottom:.5rem">${o.emoji}</div><h3>${o.name}</h3><div class="surgery-price">${o.privateFrom}–${o.privateTo}</div><div class="surgery-detail"><strong>NHS:</strong> ${o.nhsAvail}<br><strong>Average weight loss:</strong> ${o.loss}<br><strong>Timeline:</strong> ${o.time}<br><br>${o.desc}</div></div>`).join('');
 }
@@ -724,24 +700,26 @@ function renderReferrals(){
 }
 
 // ════════════════════════════════════════════════════
-// CALCULATOR (embedded)
+// CALCULATOR (embedded) — with email gate
 // ════════════════════════════════════════════════════
+let eBuiltResultsHtml='';
+
 function renderCalc(){
   const c=document.getElementById('calcEmbedContainer');
   if(!c||c.dataset.built)return;
   c.dataset.built='1';
   c.innerHTML=`
 <div style="max-width:600px;margin:0 auto">
-<div style="background:linear-gradient(135deg,#0d9488,#0f766e);color:white;text-align:center;padding:1.5rem 1rem;border-radius:12px;margin-bottom:1.25rem">
+<div style="background:linear-gradient(135deg,#16a34a,#15803d);color:white;text-align:center;padding:1.5rem 1rem;border-radius:12px;margin-bottom:1.25rem">
   <h2 style="font-size:1.15rem;font-weight:800;margin-bottom:.3rem">🎯 Which weight loss method is right for you?</h2>
   <p style="font-size:.85rem;opacity:.9">Enter your details for a personalised comparison — timelines, costs and eligibility</p>
 </div>
 <!-- Progress -->
 <div style="display:flex;align-items:flex-start;gap:0;margin-bottom:1.25rem">
-  ${[1,2,3].map(n=>`<div style="flex:1;text-align:center"><div id="epc${n}" style="width:32px;height:32px;border-radius:50%;margin:0 auto 5px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;background:${n===1?'#0d9488':'#e5e7eb'};color:${n===1?'#fff':'#9ca3af'}">${n}</div><div id="epl${n}" style="font-size:.68rem;color:${n===1?'#0d9488':'#9ca3af'};font-weight:${n===1?'600':'400'}">${['Your details','Your situation','Your results'][n-1]}</div></div>${n<3?`<div id="epcon${n}" style="flex:1;height:2px;margin-top:16px;background:#e5e7eb"></div>`:''}`).join('')}
+  ${[1,2,3].map(n=>`<div style="flex:1;text-align:center"><div id="epc${n}" style="width:32px;height:32px;border-radius:50%;margin:0 auto 5px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;background:${n===1?'#16a34a':'#e5e7eb'};color:${n===1?'#fff':'#9ca3af'}">${n}</div><div id="epl${n}" style="font-size:.68rem;color:${n===1?'#16a34a':'#9ca3af'};font-weight:${n===1?'600':'400'}">${['Your details','Your situation','Your results'][n-1]}</div></div>${n<3?`<div id="epcon${n}" style="flex:1;height:2px;margin-top:16px;background:#e5e7eb"></div>`:''}`).join('')}
 </div>
 <!-- Step 1 -->
-<div class="estep active" id="estep1">
+<div class="estep active" id="estep1" style="display:block">
   <div style="background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1rem">
     <div style="font-size:1.1rem;font-weight:700;margin-bottom:.25rem">Your details</div>
     <div style="font-size:.82rem;color:#6b7280;margin-bottom:1.25rem">We use this to calculate your BMI and estimate timelines.</div>
@@ -771,7 +749,7 @@ function renderCalc(){
       </div>
     </div>
     <div id="eerr1" style="display:none;padding:.6rem .85rem;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;color:#dc2626;font-size:.8rem;margin-bottom:.75rem"></div>
-    <button onclick="eToStep2()" style="width:100%;background:#0d9488;color:#fff;border:none;border-radius:8px;padding:.75rem;font-size:.95rem;font-weight:600">Continue → Your situation</button>
+    <button onclick="eToStep2()" style="width:100%;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:.75rem;font-size:.95rem;font-weight:600">Continue → Your situation</button>
   </div>
 </div>
 <!-- Step 2 -->
@@ -781,26 +759,41 @@ function renderCalc(){
     <div style="font-size:.82rem;color:#6b7280;margin-bottom:1.25rem">Helps filter methods you qualify for and match your budget.</div>
     <div style="margin-bottom:1.25rem">
       <label style="font-size:.83rem;font-weight:600;color:#374151;display:block;margin-bottom:.35rem">Monthly budget</label>
-      <div style="font-size:2rem;font-weight:800;color:#0d9488;text-align:center;margin-bottom:.5rem">£<span id="ebdgVal">150</span><span style="font-size:1rem;font-weight:400;color:#6b7280">/month</span></div>
-      <input type="range" id="ebdgSlider" min="0" max="400" step="10" value="150" oninput="eOnBudget(this.value)" style="width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer;-webkit-appearance:none;background:linear-gradient(to right,#0d9488 37.5%,#e5e7eb 37.5%)"/>
+      <div style="font-size:2rem;font-weight:800;color:#16a34a;text-align:center;margin-bottom:.5rem">£<span id="ebdgVal">150</span><span style="font-size:1rem;font-weight:400;color:#6b7280">/month</span></div>
+      <input type="range" id="ebdgSlider" min="0" max="400" step="10" value="150" oninput="eOnBudget(this.value)" style="width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer;-webkit-appearance:none;background:linear-gradient(to right,#16a34a 37.5%,#e5e7eb 37.5%)"/>
       <div style="display:flex;justify-content:space-between;font-size:.68rem;color:#9ca3af;margin-top:.35rem"><span>Free</span><span>£100</span><span>£200</span><span>£300</span><span>£400+</span></div>
     </div>
     <div style="margin-bottom:1.25rem">
       <label style="font-size:.83rem;font-weight:600;color:#374151;display:block;margin-bottom:.5rem">Any health conditions? <span style="font-weight:400;font-size:.75rem">(may lower eligibility BMI threshold)</span></label>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem" id="eCondGrid">
-        ${[['diabetes','🩺 Type 2 diabetes'],['hypertension','❤️ High blood pressure'],['cholesterol','🩸 High cholesterol'],['sleep','😴 Sleep apnoea'],['pcos','🌸 PCOS'],['none','✓ None of these']].map(([v,l])=>`<label onclick="eTogCond(this,'${v}')" style="display:flex;align-items:center;gap:.5rem;padding:.55rem .7rem;border:2px solid #e5e7eb;border-radius:8px;cursor:pointer;font-size:.8rem;color:#374151;font-weight:500"><input type="checkbox" value="${v}" style="accent-color:#0d9488">${l}</label>`).join('')}
+        ${[['diabetes','🩺 Type 2 diabetes'],['hypertension','❤️ High blood pressure'],['cholesterol','🩸 High cholesterol'],['sleep','😴 Sleep apnoea'],['pcos','🌸 PCOS'],['none','✓ None of these']].map(([v,l])=>`<label onclick="eTogCond(this,'${v}')" style="display:flex;align-items:center;gap:.5rem;padding:.55rem .7rem;border:2px solid #e5e7eb;border-radius:8px;cursor:pointer;font-size:.8rem;color:#374151;font-weight:500"><input type="checkbox" value="${v}" style="accent-color:#16a34a">${l}</label>`).join('')}
       </div>
     </div>
     <div style="display:flex;gap:.75rem">
       <button onclick="eGoStep(1)" style="flex:1;background:#fff;color:#374151;border:2px solid #e5e7eb;border-radius:8px;padding:.65rem;font-size:.9rem;font-weight:600">← Back</button>
-      <button onclick="eBuildResults()" style="flex:2;background:#0d9488;color:#fff;border:none;border-radius:8px;padding:.65rem;font-size:.9rem;font-weight:600">See my results →</button>
+      <button onclick="eShowEmailGate()" style="flex:2;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:.65rem;font-size:.9rem;font-weight:600">See my results →</button>
     </div>
   </div>
 </div>
-<!-- Step 3 -->
+<!-- Step 3: Email Gate + Results -->
 <div class="estep" id="estep3" style="display:none">
-  <div id="eResultsOut"></div>
-  <div style="text-align:center;margin-top:1rem"><a onclick="eRestart()" style="font-size:.82rem;color:#9ca3af;cursor:pointer;text-decoration:underline">↩ Start over</a></div>
+  <!-- Email gate shown first -->
+  <div id="eEmailGate">
+    <div class="calc-email-gate">
+      <div class="gate-icon">📊</div>
+      <h3>Your results are ready!</h3>
+      <p>Enter your email to receive your personalised weight loss comparison — with timelines, costs and eligibility for every UK method.</p>
+      <div class="gate-email-input">
+        <input type="email" id="eGateEmail" placeholder="your@email.com"/>
+        <button onclick="eGateSubmitEmail()">Send my results →</button>
+      </div>
+      <div class="gate-divider">or</div>
+      <button class="gate-skip" onclick="eShowResultsDirect()">No thanks, see my results now</button>
+    </div>
+  </div>
+  <!-- Results shown after gate -->
+  <div id="eResultsOut" style="display:none"></div>
+  <div id="eRestartWrap" style="display:none;text-align:center;margin-top:1rem"><a onclick="eRestart()" style="font-size:.82rem;color:#9ca3af;cursor:pointer;text-decoration:underline">↩ Start over</a></div>
 </div>
 </div>`;
   // Build dropdowns
@@ -809,7 +802,7 @@ function renderCalc(){
 }
 
 const eS={budget:150,conds:[]};
-function eOnBudget(v){eS.budget=parseInt(v);document.getElementById('ebdgVal').textContent=v>=400?'400+':v;const pct=((v/400)*100)+'%';document.getElementById('ebdgSlider').style.background=`linear-gradient(to right,#0d9488 ${pct},#e5e7eb ${pct})`;}
+function eOnBudget(v){eS.budget=parseInt(v);document.getElementById('ebdgVal').textContent=v>=400?'400+':v;const pct=((v/400)*100)+'%';document.getElementById('ebdgSlider').style.background=`linear-gradient(to right,#16a34a ${pct},#e5e7eb ${pct})`;}
 function eTogCond(el,val){el.classList.toggle('on');const cb=el.querySelector('input');cb.checked=!cb.checked;if(val==='none'){document.querySelectorAll('#eCondGrid label').forEach(item=>{if(item.querySelector('input').value!=='none'){item.classList.remove('on');item.querySelector('input').checked=false;}});eS.conds=cb.checked?['none']:[];}else{document.querySelectorAll('#eCondGrid input[value="none"]').forEach(n=>{n.checked=false;n.closest('label').classList.remove('on');});eS.conds=eS.conds.filter(c=>c!=='none');if(cb.checked){if(!eS.conds.includes(val))eS.conds.push(val);}else{eS.conds=eS.conds.filter(c=>c!==val);}}}
 function eGetCurrKg(){const st=parseInt(document.getElementById('ecSt').value)||0;const lb=parseInt(document.getElementById('ecLb').value)||0;return(st*14+lb)*0.453592;}
 function eGetTgtKg(){const st=parseInt(document.getElementById('etSt').value)||0;const lb=parseInt(document.getElementById('etLb').value)||0;return(st*14+lb)*0.453592;}
@@ -820,10 +813,10 @@ function eGoStep(n){
   for(let i=1;i<=3;i++){
     const c=document.getElementById('epc'+i);
     const l=document.getElementById('epl'+i);
-    if(i<n){c.style.background='#0d9488';c.style.color='#fff';c.textContent='✓';}
-    else if(i===n){c.style.background='#0d9488';c.style.color='#fff';c.textContent=i;l.style.color='#0d9488';l.style.fontWeight='600';}
+    if(i<n){c.style.background='#16a34a';c.style.color='#fff';c.textContent='✓';}
+    else if(i===n){c.style.background='#16a34a';c.style.color='#fff';c.textContent=i;l.style.color='#16a34a';l.style.fontWeight='600';}
     else{c.style.background='#e5e7eb';c.style.color='#9ca3af';c.textContent=i;l.style.color='#9ca3af';l.style.fontWeight='400';}
-    if(i<3)document.getElementById('epcon'+i).style.background=i<n?'#0d9488':'#e5e7eb';
+    if(i<3)document.getElementById('epcon'+i).style.background=i<n?'#16a34a':'#e5e7eb';
   }
 }
 function eToStep2(){
@@ -836,7 +829,7 @@ function eToStep2(){
   err.style.display='none';
   eGoStep(2);
 }
-function eRestart(){eS.conds=[];eS.budget=150;document.getElementById('ebdgSlider').value=150;eOnBudget(150);document.querySelectorAll('#eCondGrid label').forEach(el=>{el.classList.remove('on');el.querySelector('input').checked=false;});eGoStep(1);}
+function eRestart(){eS.conds=[];eS.budget=150;document.getElementById('ebdgSlider').value=150;eOnBudget(150);document.querySelectorAll('#eCondGrid label').forEach(el=>{el.classList.remove('on');el.querySelector('input').checked=false;});document.getElementById('eEmailGate').style.display='block';document.getElementById('eResultsOut').style.display='none';document.getElementById('eRestartWrap').style.display='none';eGoStep(1);}
 
 const EMETHODS=[
   {id:'mounjaro',name:'Mounjaro',emoji:'💉',cat:'GLP-1 Injection',monthlyRate:.0135,minCost:148,avgCost:200,oneOff:false,eligBMI:30,eligBMIcond:27,minBudget:148,evidence:'22.5% avg body weight loss — SURMOUNT-1 trial'},
@@ -851,11 +844,12 @@ function eCalcMonths(m,cKg,tKg){let rem=cKg-tKg;if(rem<=0)return 0;let months=0,
 function eEligible(m,bmiVal,conds){const hasCond=conds.length>0&&!conds.includes('none');const threshold=(m.eligBMIcond&&hasCond)?m.eligBMIcond:m.eligBMI;return bmiVal>=threshold;}
 function eFmtKg(kg){const lbs=kg/0.453592;const st=Math.floor(lbs/14);const lb=Math.round(lbs%14);return st+'st '+lb+'lb';}
 
-function eBuildResults(){
+function eBuildResultsHtml(){
   const currKg=eGetCurrKg(),tgtKg=eGetTgtKg(),hM=eGetHM();
   const bmiVal=eBmi(currKg,hM);
   const toLose=currKg-tgtKg;
   const budget=eS.budget>=400?9999:eS.budget;
+  const bmiCat=bmiVal>=30?'Obese (class I+)':bmiVal>=25?'Overweight':bmiVal>=18.5?'Healthy weight':'Underweight';
   const rows=EMETHODS.map(m=>{
     const elig=eEligible(m,bmiVal,eS.conds);
     const afford=m.oneOff?(budget>=200||eS.budget>=400):budget>=m.minCost;
@@ -867,9 +861,7 @@ function eBuildResults(){
     if(aOk&&bOk)return a.months-b.months;
     return 0;
   });
-  const bmiCols={30:{label:'Obese',color:'#ea580c'},25:{label:'Overweight',color:'#d97706'},18.5:{label:'Healthy',color:'#16a34a'}};
-  const bmiCat=bmiVal>=30?'Obese (class I+)':bmiVal>=25?'Overweight':bmiVal>=18.5?'Healthy weight':'Underweight';
-  let html=`<div style="background:linear-gradient(135deg,#0d9488,#0f766e);border-radius:12px;padding:1.25rem;color:white;margin-bottom:1rem;text-align:center">
+  let html=`<div style="background:linear-gradient(135deg,#16a34a,#15803d);border-radius:12px;padding:1.25rem;color:white;margin-bottom:1rem;text-align:center">
     <div style="font-size:1rem;font-weight:700;margin-bottom:.75rem">Your personalised results</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem">
       <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem .5rem"><div style="font-size:1.1rem;font-weight:800">${eFmtKg(toLose)}</div><div style="font-size:.65rem;opacity:.85;margin-top:3px">To lose</div></div>
@@ -882,11 +874,11 @@ function eBuildResults(){
     const notElig=!m.elig;
     const overBdg=m.elig&&!m.afford;
     let badge='';
-    if(isTop)badge='<span style="background:#0d9488;color:#fff;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px">⭐ Best match</span>';
+    if(isTop)badge='<span style="background:#16a34a;color:#fff;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px">⭐ Best match</span>';
     else if(notElig)badge='<span style="background:#fef2f2;color:#b91c1c;font-size:.62rem;font-weight:600;padding:2px 7px;border-radius:20px;border:1px solid #fecaca;margin-left:5px">May not qualify</span>';
     else if(overBdg)badge='<span style="background:#fffbeb;color:#d97706;font-size:.62rem;font-weight:600;padding:2px 7px;border-radius:20px;border:1px solid #fde68a;margin-left:5px">Over budget</span>';
     const costStr=m.oneOff?'£'+m.avgCost.toLocaleString()+' (one-off)':'£'+m.minCost+'/mo from';
-    html+=`<div style="background:#fff;border:2px solid ${isTop?'#0d9488':'#e5e7eb'};border-radius:12px;padding:1rem;margin-bottom:.75rem${notElig?';opacity:.6':''}">
+    html+=`<div style="background:#fff;border:2px solid ${isTop?'#16a34a':'#e5e7eb'};border-radius:12px;padding:1rem;margin-bottom:.75rem${notElig?';opacity:.6':''}">
       <div style="display:flex;align-items:center;gap:.75rem">
         <div style="font-size:1.8rem;flex-shrink:0">${m.emoji}</div>
         <div style="flex:1">
@@ -894,7 +886,7 @@ function eBuildResults(){
           <div style="font-size:.72rem;color:#6b7280">${m.cat} · ${m.evidence}</div>
         </div>
         <div style="text-align:right;flex-shrink:0">
-          <div style="font-size:.95rem;font-weight:800;color:#0d9488">${m.months>0?m.months+'mo':'—'}</div>
+          <div style="font-size:.95rem;font-weight:800;color:#16a34a">${m.months>0?m.months+'mo':'—'}</div>
           <div style="font-size:.65rem;color:#9ca3af">to goal</div>
         </div>
       </div>
@@ -903,32 +895,43 @@ function eBuildResults(){
       </div>
     </div>`;
   });
-  html+=`<div style="background:#f0fdfa;border:1.5px solid #6ee7b7;border-radius:12px;padding:1rem;margin-top:.5rem;text-align:center">
-    <div style="font-size:.95rem;font-weight:700;color:#065f46;margin-bottom:.35rem">📧 Save your results</div>
-    <div style="font-size:.8rem;color:#047857;margin-bottom:.75rem">Get your personalised comparison by email with weekly price updates.</div>
-    <div style="display:flex;gap:.5rem;max-width:360px;margin:0 auto">
-      <input type="email" id="eCalcEmail" placeholder="your@email.com" style="flex:1;padding:.55rem .75rem;border:1.5px solid #6ee7b7;border-radius:8px;font-size:.82rem;outline:none;background:#fff">
-      <button onclick="eSubmitEmail()" style="padding:.55rem 1rem;background:#0d9488;color:#fff;border:none;border-radius:8px;font-size:.82rem;font-weight:600;white-space:nowrap">Send →</button>
-    </div>
-  </div>`;
-  document.getElementById('eResultsOut').innerHTML=html;
-  eGoStep(3);
+  return html;
 }
-function eSubmitEmail(){
-  const el=document.getElementById('eCalcEmail');
+
+function eShowEmailGate(){
+  // Validate step 2 was done (budget set)
+  eBuiltResultsHtml=eBuildResultsHtml();
+  eGoStep(3);
+  document.getElementById('eEmailGate').style.display='block';
+  document.getElementById('eResultsOut').style.display='none';
+  document.getElementById('eRestartWrap').style.display='none';
+}
+
+function eShowResultsDirect(){
+  document.getElementById('eEmailGate').style.display='none';
+  document.getElementById('eResultsOut').innerHTML=eBuiltResultsHtml;
+  document.getElementById('eResultsOut').style.display='block';
+  document.getElementById('eRestartWrap').style.display='block';
+}
+
+function eGateSubmitEmail(){
+  const el=document.getElementById('eGateEmail');
   const e=el.value.trim();
   if(!e||!e.includes('@')){el.style.borderColor='#f87171';return;}
-  submitEmail(e);el.value='';el.disabled=true;
+  submitEmail(e);
+  el.value='';el.disabled=true;
+  // Show results after submitting
+  eShowResultsDirect();
 }
 
 // ════════════════════════════════════════════════════
 // BLOG
 // ════════════════════════════════════════════════════
 const BLOGS=[
-  {title:'Mounjaro vs Wegovy: Which GLP-1 Is Right for You in 2026?',category:'GLP-1 Guide',catClass:'cat-glp1',emoji:'💉',bgGrad:'linear-gradient(135deg,#4c1d95,#7c3aed)',date:'June 2026',readTime:'8 min read',excerpt:'Both Mounjaro and Wegovy are GLP-1 medications available in the UK, but they work differently and produce different results. Here\'s everything you need to know.',content:`<h2>The Key Difference</h2><p>Mounjaro (tirzepatide) is a dual GIP/GLP-1 receptor agonist — it works on two hormone pathways instead of one, which is why it produces greater weight loss. Wegovy (semaglutide) is a GLP-1 receptor agonist only.</p><h2>Weight Loss Results</h2><p>In clinical trials, Mounjaro at maximum dose produced average weight loss of 22.5% of body weight (SURMOUNT-1 trial), while Wegovy produced 14.9% (STEP-1 trial). Both are significantly more effective than lifestyle changes alone.</p><h2>Price Comparison (June 2026)</h2><p>Mounjaro starts from £148/month (2.5mg, Chemist4U). Wegovy starts from £98.98/month (0.25mg, Asda Online Doctor). At higher doses, Mounjaro is typically £80–£100 more expensive per month than comparable Wegovy doses.</p><h2>Which Should You Choose?</h2><p>If budget is your primary concern: Wegovy. If you want the strongest clinical evidence for weight loss and can afford the higher price: Mounjaro. Both require a prescription from a UK-registered clinician.</p><blockquote>Always start with the lowest dose and titrate up under medical supervision. Side effects — mainly nausea and digestive discomfort — are usually temporary and manageable.</blockquote>`},
-  {title:'Cheapest Mounjaro UK 2026: All 26 Providers Compared',category:'Price Guide',catClass:'cat-glp1',emoji:'💊',bgGrad:'linear-gradient(135deg,#1e3a5f,#3b82f6)',date:'June 2026',readTime:'6 min read',excerpt:'We\'ve pulled prices from all 26 UK Mounjaro providers. The cheapest 2.5mg dose is £148 (Chemist4U). Here\'s the full breakdown.',content:`<h2>The Cheapest Options</h2><p>At the starting 2.5mg dose, the cheapest providers in June 2026 are: Chemist4U (£148), Asda Online Doctor (£148.97), and Pharmacy Advance (£154.99). At the top 15mg dose, Chemist4U remains cheapest at £298.</p><h2>What Drives the Price Difference?</h2><p>Price differences across providers come from: consultation fees (some are included, some charged separately), delivery costs (£2.99–£9.95), whether a pharmacist review is included, and competitive positioning. High-street brands (Boots, Superdrug) typically charge more than online-only providers.</p><h2>Watch Out For</h2><p>First-order discounts that don't reflect the ongoing monthly price. Delivery fees not shown in the headline price. Providers that require in-person consultations (adds time and sometimes cost).</p><h2>Our Recommendation</h2><p>Compare the total cost including delivery and consultation across multiple providers. Use our live comparison table above — updated every Monday — to find the current cheapest option for your dose.</p>`},
+  {title:'Mounjaro vs Wegovy: Which GLP-1 Is Right for You in 2026?',category:'GLP-1 Guide',catClass:'cat-glp1',emoji:'💉',bgGrad:'linear-gradient(135deg,#14532d,#16a34a)',date:'June 2026',readTime:'8 min read',excerpt:"Both Mounjaro and Wegovy are GLP-1 medications available in the UK, but they work differently and produce different results. Here's everything you need to know.",content:`<h2>The Key Difference</h2><p>Mounjaro (tirzepatide) is a dual GIP/GLP-1 receptor agonist — it works on two hormone pathways instead of one, which is why it produces greater weight loss. Wegovy (semaglutide) is a GLP-1 receptor agonist only.</p><h2>Weight Loss Results</h2><p>In clinical trials, Mounjaro at maximum dose produced average weight loss of 22.5% of body weight (SURMOUNT-1 trial), while Wegovy produced 14.9% (STEP-1 trial). Both are significantly more effective than lifestyle changes alone.</p><h2>Price Comparison (June 2026)</h2><p>Mounjaro starts from £148/month (2.5mg, Chemist4U). Wegovy starts from £98.98/month (0.25mg, Asda Online Doctor). At higher doses, Mounjaro is typically £80–£100 more expensive per month than comparable Wegovy doses.</p><h2>Which Should You Choose?</h2><p>If budget is your primary concern: Wegovy. If you want the strongest clinical evidence for weight loss and can afford the higher price: Mounjaro. Both require a prescription from a UK-registered clinician.</p><blockquote>Always start with the lowest dose and titrate up under medical supervision. Side effects — mainly nausea and digestive discomfort — are usually temporary and manageable.</blockquote>`},
+  {title:'Cheapest Mounjaro UK 2026: All 26 Providers Compared',category:'Price Guide',catClass:'cat-glp1',emoji:'💊',bgGrad:'linear-gradient(135deg,#1e3a5f,#3b82f6)',date:'June 2026',readTime:'6 min read',excerpt:"We've pulled prices from all 26 UK Mounjaro providers. The cheapest 2.5mg dose is £148 (Chemist4U). Here's the full breakdown.",content:`<h2>The Cheapest Options</h2><p>At the starting 2.5mg dose, the cheapest providers in June 2026 are: Chemist4U (£148), Asda Online Doctor (£148.97), and Pharmacy Advance (£154.99). At the top 15mg dose, Chemist4U remains cheapest at £298.</p><h2>What Drives the Price Difference?</h2><p>Price differences across providers come from: consultation fees (some are included, some charged separately), delivery costs (£2.99–£9.95), whether a pharmacist review is included, and competitive positioning. High-street brands (Boots, Superdrug) typically charge more than online-only providers.</p><h2>Watch Out For</h2><p>First-order discounts that don't reflect the ongoing monthly price. Delivery fees not shown in the headline price. Providers that require in-person consultations (adds time and sometimes cost).</p><h2>Our Recommendation</h2><p>Compare the total cost including delivery and consultation across multiple providers. Use our live comparison table above — updated every Monday — to find the current cheapest option for your dose.</p>`},
   {title:'Mounjaro vs Slimming World: Which Loses More Weight?',category:'Comparison',catClass:'cat-diet',emoji:'⚖️',bgGrad:'linear-gradient(135deg,#14532d,#22c55e)',date:'June 2026',readTime:'5 min read',excerpt:'GLP-1 injections vs slimming clubs — the evidence, the costs and who each approach works best for.',content:`<h2>The Weight Loss Gap Is Large</h2><p>Mounjaro produces average weight loss of 22.5% of body weight over 72 weeks. Slimming World produces 5–8% over 12 months in NHS-commissioned trials. At 90kg starting weight, that's roughly 20kg vs 5–7kg.</p><h2>But the Cost Gap Is Also Large</h2><p>Slimming World costs £14.95–£19.95/month. Mounjaro costs £148–£375/month. Over 12 months, you'd spend £180–£240 on Slimming World vs £1,800–£4,500 on Mounjaro. For many people, the question is whether the extra weight loss justifies the extra cost.</p><h2>Who GLP-1 Is Better For</h2><p>People with significant weight to lose (over 3 stone), obesity-related health conditions, or who have tried diet programmes without long-term success. The appetite suppression GLP-1 provides makes adherence much easier for many patients.</p><h2>The Best Combination</h2><p>Use GLP-1 for rapid initial loss, then transition to a slimming club or calorie tracking app for maintenance. The behavioural skills from a slimming club help sustain the lower weight after tapering GLP-1 medication.</p>`},
-  {title:'Are GLP-1 Injections Available on the NHS?',category:'NHS Guide',catClass:'cat-guide',emoji:'🏥',bgGrad:'linear-gradient(135deg,#0c4a6e,#0ea5e9)',date:'June 2026',readTime:'5 min read',excerpt:'Wegovy and Mounjaro are both approved for NHS use — but getting them on the NHS isn\'t straightforward. Here\'s what you need to know.',content:`<h2>Yes, But It\'s Complicated</h2><p>Both Wegovy (semaglutide) and Mounjaro (tirzepatide) are NICE-approved for weight management in England. However, NHS access is currently restricted due to supply constraints and commissioning decisions.</p><h2>Current NHS Eligibility (2026)</h2><p>To access GLP-1 medications on the NHS, you typically need: BMI of 35+ with at least one obesity-related condition (or BMI 40+), a referral to a Tier 3 specialist weight management service, and documented evidence that you've tried other weight loss interventions.</p><h2>The Waiting List Reality</h2><p>NHS Tier 3 weight management services have long waiting lists — typically 12–36 months in most areas. The standard prescription charge (£9.90 per item in 2026) applies, making it substantially cheaper than private prescriptions if you qualify.</p><h2>What to Do</h2><p>Start with a conversation with your GP. If you don\'t meet NHS criteria or can\'t wait, private prescriptions from online doctors are widely available from £99–£375/month depending on dose and provider.</p>`},
+  {title:'Are GLP-1 Injections Available on the NHS?',category:'NHS Guide',catClass:'cat-guide',emoji:'🏥',bgGrad:'linear-gradient(135deg,#0c4a6e,#0ea5e9)',date:'June 2026',readTime:'5 min read',excerpt:"Wegovy and Mounjaro are both approved for NHS use — but getting them on the NHS isn't straightforward. Here's what you need to know.",content:`<h2>Yes, But It's Complicated</h2><p>Both Wegovy (semaglutide) and Mounjaro (tirzepatide) are NICE-approved for weight management in England. However, NHS access is currently restricted due to supply constraints and commissioning decisions.</p><h2>Current NHS Eligibility (2026)</h2><p>To access GLP-1 medications on the NHS, you typically need: BMI of 35+ with at least one obesity-related condition (or BMI 40+), a referral to a Tier 3 specialist weight management service, and documented evidence that you've tried other weight loss interventions.</p><h2>The Waiting List Reality</h2><p>NHS Tier 3 weight management services have long waiting lists — typically 12–36 months in most areas. The standard prescription charge (£9.90 per item in 2026) applies, making it substantially cheaper than private prescriptions if you qualify.</p><h2>What to Do</h2><p>Start with a conversation with your GP. If you don't meet NHS criteria or can't wait, private prescriptions from online doctors are widely available from £99–£375/month depending on dose and provider.</p>`},
   {title:'Gastric Sleeve vs Gastric Bypass: Which Is Better?',category:'Surgery Guide',catClass:'cat-surgery',emoji:'✂️',bgGrad:'linear-gradient(135deg,#7f1d1d,#dc2626)',date:'June 2026',readTime:'7 min read',excerpt:'Both operations produce substantial, permanent weight loss — but they work differently and suit different patients. Here\'s the complete comparison.',content:`<h2>The Procedures</h2><p>Gastric sleeve: removes ~80% of the stomach, leaving a tube-shaped pouch. No rerouting of intestines. Gastric bypass: creates a small stomach pouch AND reroutes the small intestine, bypassing part of the digestive tract.</p><h2>Weight Loss Outcomes</h2><p>Gastric sleeve: 60–70% excess weight loss at 12 months. Gastric bypass: 70–80% excess weight loss at 12 months. Bypass produces slightly more weight loss on average, especially long-term.</p><h2>Which Is Better for Type 2 Diabetes?</h2><p>Gastric bypass — by far. The metabolic effects of rerouting the intestine cause diabetes remission in 70–80% of patients, often before significant weight is even lost. This is the strongest evidence base for any diabetes treatment.</p><h2>Cost and Risk</h2><p>Gastric sleeve: £8,995–£12,000 privately, slightly lower complication risk. Gastric bypass: £11,000–£15,000 privately, slightly higher complexity but equivalent safety in specialist centres.</p><h2>Our Verdict</h2><p>For most people, the gastric sleeve is simpler and sufficient. If you have type 2 diabetes or want maximum long-term weight loss, the bypass is worth the additional cost and complexity.</p>`}
 ];
 
@@ -952,8 +955,10 @@ function openBlog(i){
 }
 
 // ════════════════════════════════════════════════════
-// TAB SWITCHING
+// HASH-BASED ROUTING — each tab gets a URL
 // ════════════════════════════════════════════════════
+const TAB_NAMES=['glp1','pills','calc','meal','clubs','surgery','referrals','blog'];
+
 function switchTab(name,btn){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -964,13 +969,49 @@ function switchTab(name,btn){
   if(name==='clubs')renderClubTable();
   if(name==='surgery')renderSurgery();
   if(name==='referrals')renderReferrals();
-  if(name==='calc'){renderCalc();}
+  if(name==='calc')renderCalc();
   if(name==='blog')renderBlog();
+  // Update URL hash without scrolling
+  history.replaceState(null,'','#'+name);
 }
 
 function switchToCalc(){
   const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.textContent.includes('Calculator'));
   if(btn)switchTab('calc',btn);
+}
+
+// Load correct tab from URL hash on page load
+function loadFromHash(){
+  const hash=(window.location.hash||'').replace('#','');
+  if(TAB_NAMES.includes(hash)){
+    const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+hash+"'"));
+    if(btn)switchTab(hash,btn);
+  }
+}
+
+// ════════════════════════════════════════════════════
+// COUNT-UP ANIMATION
+// ════════════════════════════════════════════════════
+function animateCount(el,target,suffix,duration){
+  const start=0;const startTime=performance.now();
+  function step(now){
+    const elapsed=now-startTime;
+    const progress=Math.min(elapsed/duration,1);
+    // Ease out cubic
+    const ease=1-Math.pow(1-progress,3);
+    const current=Math.round(start+(target-start)*ease);
+    el.textContent=current.toLocaleString('en-GB')+suffix;
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function startCountUps(){
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    const target=parseInt(el.getAttribute('data-target'));
+    const suffix=el.getAttribute('data-suffix')||'';
+    animateCount(el,target,suffix,1400);
+  });
 }
 
 // ════════════════════════════════════════════════════
@@ -1000,9 +1041,7 @@ document.getElementById('calcPopup').addEventListener('click',function(e){if(e.t
 
 let calcPopupTriggered=false;
 window.addEventListener('scroll',()=>{
-  // Sticky email bar
   if(!stickyDismissed)document.getElementById('stickyBar').classList.toggle('visible',window.scrollY>400);
-  // Calc popup — once per session, after scrolling 600px
   if(!calcPopupTriggered&&window.scrollY>600&&!sessionStorage.getItem('calcPopupSeen')){
     calcPopupTriggered=true;
     document.getElementById('calcPopup').classList.add('show');
@@ -1020,7 +1059,12 @@ if(window.innerWidth>768){
 // INIT
 // ════════════════════════════════════════════════════
 render();
-window.onload=()=>{if(!document.getElementById('tableBody').innerHTML)render();};
+window.onload=()=>{
+  if(!document.getElementById('tableBody').innerHTML)render();
+  loadFromHash();
+  // Start count-up after brief delay so it's visible
+  setTimeout(startCountUps,300);
+};
 </script>
 </body>
 </html>

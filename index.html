@@ -259,6 +259,72 @@ td.price.na{color:var(--gray-300);font-weight:400}
 .popup-box p{font-size:0.85rem;color:var(--gray-500);margin-bottom:1.25rem}
 .popup-close{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:0.65rem 1.5rem;font-size:0.9rem;font-weight:600;cursor:pointer}
 
+/* ANNOUNCEMENT BANNER */
+#pillsBanner{background:linear-gradient(90deg,#0d9488,#7c3aed);color:#fff;text-align:center;padding:0.6rem 1rem;font-size:0.82rem;font-weight:600;position:relative;display:flex;align-items:center;justify-content:center;gap:0.75rem}
+#pillsBanner a{color:#fff;text-decoration:underline;cursor:pointer}
+.banner-dismiss{background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:1rem;position:absolute;right:0.75rem;top:50%;transform:translateY(-50%)}
+.tab-new-badge{background:#ef4444;color:#fff;font-size:0.62rem;font-weight:700;padding:1px 5px;border-radius:10px;vertical-align:middle;letter-spacing:0.02em;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.65}}
+
+/* CALCULATOR POPUP */
+#calcPopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;align-items:center;justify-content:center;padding:1rem}
+#calcPopup.show{display:flex}
+.calc-popup-box{background:#fff;border-radius:20px;padding:0;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.25);overflow:hidden;position:relative}
+.calc-popup-header{background:linear-gradient(135deg,var(--primary),#0f766e);padding:1.5rem 1.5rem 1.25rem;color:#fff;text-align:center}
+.calc-popup-header h3{font-size:1.15rem;font-weight:700;margin-bottom:0.35rem}
+.calc-popup-header p{font-size:0.83rem;opacity:0.9;line-height:1.4}
+.calc-popup-body{padding:1.25rem 1.5rem 1.5rem}
+.calc-popup-features{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1.1rem}
+.calc-popup-feat{background:#f0fdf4;border-radius:8px;padding:0.5rem 0.65rem;font-size:0.77rem;color:#065f46;font-weight:500}
+.calc-popup-cta{display:block;width:100%;padding:0.8rem;background:var(--primary);color:#fff;border:none;border-radius:10px;font-size:0.95rem;font-weight:700;cursor:pointer;text-align:center;margin-bottom:0.65rem}
+.calc-popup-cta:hover{background:#0f766e}
+.calc-popup-skip{display:block;text-align:center;font-size:0.78rem;color:var(--gray-400);cursor:pointer;text-decoration:underline}
+.calc-popup-close{position:absolute;top:0.75rem;right:0.9rem;background:rgba(255,255,255,0.25);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:1}
+
+/* CALCULATOR TAB */
+.calc-tab-wrap{padding:1.5rem 0}
+.calc-tab-intro{text-align:center;max-width:600px;margin:0 auto 1.5rem}
+.calc-tab-intro h2{font-size:1.3rem;font-weight:700;color:var(--gray-800);margin-bottom:0.5rem}
+.calc-tab-intro p{font-size:0.88rem;color:var(--gray-500);line-height:1.6}
+.calc-iframe-wrap{border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid var(--gray-200)}
+.calc-iframe-wrap iframe{display:block;width:100%;border:none}
+.calc-tab-link{display:block;text-align:center;font-size:0.76rem;color:var(--gray-400);margin-top:0.5rem}
+.calc-tab-link a{color:var(--primary)}
+
+/* PILLS TAB */
+.pill-overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem;margin-bottom:2rem}
+.pill-overview-card{background:#fff;border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);border:1px solid var(--gray-200);position:relative}
+.pill-overview-card.rx{border-top:3px solid var(--primary)}
+.pill-overview-card.otc{border-top:3px solid var(--green)}
+.pill-overview-card.limited{border-top:3px solid var(--amber);opacity:0.85}
+.pill-badge{display:inline-block;padding:0.18rem 0.65rem;border-radius:20px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem}
+.pill-badge.rx{background:var(--primary-light);color:var(--primary)}
+.pill-badge.otc{background:var(--green-light);color:var(--green)}
+.pill-badge.limited{background:var(--amber-light);color:var(--amber)}
+.pill-overview-card h3{font-size:1rem;font-weight:700;color:var(--gray-800);margin-bottom:0.25rem}
+.pill-active{font-size:0.75rem;color:var(--gray-500);margin-bottom:0.6rem}
+.pill-efficacy{font-size:0.82rem;font-weight:600;color:var(--primary);margin-bottom:0.5rem}
+.pill-overview-card p{font-size:0.8rem;color:var(--gray-600);line-height:1.55;margin-bottom:0.75rem}
+.pill-cost-range{font-size:1.1rem;font-weight:800;color:var(--gray-800)}
+.pill-cost-range span{font-size:0.75rem;font-weight:400;color:var(--gray-500)}
+.pill-providers-table-wrap{overflow-x:auto;margin-top:2rem;margin-bottom:1.5rem}
+.pill-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;font-size:0.82rem}
+.pill-table thead{background:var(--gray-800);color:#fff}
+.pill-table th{padding:0.65rem 0.9rem;text-align:left;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
+.pill-table td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--gray-100);vertical-align:middle}
+.pill-table tr:last-child td{border-bottom:none}
+.pill-table tr:hover td{background:var(--gray-50)}
+.pill-table .cheapest{background:#f0fdf4}
+.pill-table .cheapest td:first-child::before{content:'🏆 ';font-size:0.8rem}
+.pill-rx-badge{background:var(--primary-light);color:var(--primary);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.68rem;font-weight:700;white-space:nowrap}
+.pill-otc-badge{background:var(--green-light);color:var(--green);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.68rem;font-weight:700;white-space:nowrap}
+.pill-provider-link{color:var(--primary);font-weight:600;text-decoration:none;font-size:0.78rem}
+.pill-provider-link:hover{text-decoration:underline}
+.pill-filter-row{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+.pill-filter-btn{padding:0.4rem 0.9rem;border-radius:20px;border:1.5px solid var(--gray-300);background:#fff;font-size:0.78rem;font-weight:600;cursor:pointer;color:var(--gray-600);transition:all 0.2s}
+.pill-filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pill-info-box{background:var(--amber-light);border:1px solid var(--amber);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:0.82rem;color:#92400e;line-height:1.6}
+
 /* FOOTER */
 footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;margin-top:2rem}
 .footer-inner{max-width:1200px;margin:0 auto;font-size:0.78rem;line-height:1.6}
@@ -279,14 +345,10 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
 </head>
 <body>
 
-<!-- 1. PILL COMING SOON — very top -->
-<div id="pillBanner">
-  <div class="pill-banner-inner">
-    <div class="pill-banner-badge">⏳ Coming Soon</div>
-    <div class="pill-banner-text">💊 <strong>Oral GLP-1 weight loss pills are coming to the UK</strong> — subscribe now to get prices &amp; availability first</div>
-    <button class="pill-banner-cta" onclick="scrollToEmailForm()">Notify Me →</button>
-    <button class="pill-banner-dismiss" onclick="this.parentElement.parentElement.style.display='none'">✕</button>
-  </div>
+<!-- 1. PILLS LAUNCH ANNOUNCEMENT — very top -->
+<div id="pillsBanner">
+  💊 <strong>New:</strong> Weight Loss Pills tab is live — compare Orlistat, Alli &amp; Mysimba prices across UK providers. <a onclick="document.querySelector('[onclick*=pills]').click()" role="button">See prices →</a>
+  <button class="banner-dismiss" onclick="document.getElementById('pillsBanner').style.display='none'" aria-label="Dismiss">✕</button>
 </div>
 
 <!-- 2. SUBSCRIBE BANNER -->
@@ -308,7 +370,7 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
       <div class="logo-icon">⚖️</div>
       <div class="logo-text">
         <h1>Weight Loss Compare UK</h1>
-        <p>weightlosscompare.co · All Options · Updated Weekly</p>
+        <p>weightlosscompare.co · All Weight Loss Options · Updated Weekly</p>
       </div>
     </div>
     <div class="header-badges">
@@ -323,11 +385,11 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
   <div class="hero-inner">
     <div>
       <div class="hero-title">Find the <span>Cheapest Way</span> to Lose Weight in the UK</div>
-      <div class="hero-sub">GLP-1 injections · Meal replacement plans · Slimming clubs · Weight loss surgery — all compared</div>
+      <div class="hero-sub">GLP-1 injections · Meal replacement plans · Slimming clubs · Weight loss pills · Surgery — all compared</div>
     </div>
     <div class="stat-grid">
       <div class="stat-box"><div class="stat-num">30+</div><div class="stat-label">Providers</div></div>
-      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Methods</div></div>
+      <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Methods</div></div>
       <div class="stat-box"><div class="stat-num">Weekly</div><div class="stat-label">Updates</div></div>
     </div>
   </div>
@@ -335,11 +397,15 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
 
 <div class="stats-bar">
   <div class="stats-bar-inner">
-    <div class="stat-item"><span>💉</span><span>Cheapest Mounjaro 2.5mg: <strong>£139 (Slinic)</strong></span></div>
-    <div class="stat-item"><span>💊</span><span>Cheapest Wegovy 0.25mg: <strong>£99 (Multiple)</strong></span></div>
-    <div class="stat-item"><span>🍃</span><span>Meal plans from <strong>£2.50/day</strong></span></div>
-    <div class="stat-item"><span>🏥</span><span>Surgery from <strong>£3,000 (balloon)</strong></span></div>
-    <div class="stat-item"><span>🤝</span><span>WW from <strong>£10.95/mo</strong></span></div>
+    <div class="stat-item"><span>💉</span><span>Cheapest Mounjaro 2.5mg: <strong>£133.19 (Medino)</strong></span></div>
+    <div class="stat-item"><span>💊</span><span>Cheapest Wegovy 0.25mg: <strong>£86.39 (Medino)</strong></span></div>
+    <div class="stat-item"><span>💊</span><span>Orlistat (prescription) from: <strong>£29.95/month</strong></span></div>
+    <div class="stat-item"><span>🍃</span><span>Meal plans from: <strong>£2.50/day</strong></span></div>
+    <div class="stat-item"><span>🏥</span><span>Surgery from: <strong>£3,000 (balloon)</strong></span></div>
+    <div class="stat-item"><span>🤝</span><span>Slimming clubs from: <strong>£10.95/mo</strong></span></div>
+    
+    
+    
   </div>
 </div>
 
@@ -350,10 +416,12 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
 <div class="tabs-wrap">
   <div class="tabs-inner">
     <button class="tab-btn active" onclick="switchTab('glp1',this)">💉 GLP-1 Injections</button>
+    <button class="tab-btn" onclick="switchTab('pills',this);renderPills()">💊 Weight Loss Pills <span class="tab-new-badge">NEW</span></button>
     <button class="tab-btn" onclick="switchTab('meal',this)">🍃 Meal Replacement Plans</button>
     <button class="tab-btn" onclick="switchTab('clubs',this)">🤝 Slimming Clubs &amp; Apps</button>
     <button class="tab-btn" onclick="switchTab('surgery',this)">🏥 Weight Loss Surgery</button>
     <button class="tab-btn" onclick="switchTab('referrals',this)">🎁 Referral &amp; Welcome Offers</button>
+    <button class="tab-btn" onclick="switchTab('calc',this)">🧮 Cost Calculator</button>
     <button class="tab-btn" onclick="switchTab('blog',this);renderBlog()">📝 Blog &amp; Guides</button>
   </div>
 </div>
@@ -404,6 +472,15 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
       <button onclick="handleInlineEmail()">Get Updates</button>
     </div>
   </div>
+</div>
+
+<div id="tab-pills" class="section">
+  <div class="section-head">
+    <h2>💊 Weight Loss Pills UK 2026</h2>
+    <p>Compare prescription and over-the-counter weight loss tablets available in the UK — with provider prices, evidence and eligibility</p>
+    <div class="update-badge">✅ Prices updated June 2026</div>
+  </div>
+  <div id="pillsContent"></div>
 </div>
 
 <div id="tab-meal" class="section">
@@ -457,6 +534,19 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
   <div class="referral-grid" id="referralGrid"></div>
 </div>
 
+<div id="tab-calc" class="section">
+  <div class="calc-tab-wrap">
+    <div class="calc-tab-intro">
+      <h2>🧮 Find the Cheapest Way for You to Lose Weight</h2>
+      <p>Answer 3 quick questions — get a personalised cost estimate and timeline for every UK weight loss method, ranked for your situation.</p>
+    </div>
+    <div class="calc-iframe-wrap">
+      <iframe src="./calculator.html" height="820" title="UK Weight Loss Cost Calculator" loading="lazy"></iframe>
+    </div>
+    <div class="calc-tab-link"><a href="./calculator.html" target="_blank">Open full-screen ↗</a> · Free to embed on your website</div>
+  </div>
+</div>
+
 <div id="tab-blog" class="section">
   <div class="section-head">
     <h2>📝 Weight Loss Guides &amp; Comparisons</h2>
@@ -488,6 +578,26 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
   </div>
 </div>
 
+<div id="calcPopup">
+  <div class="calc-popup-box">
+    <button class="calc-popup-close" onclick="closeCalcPopup()" aria-label="Close">✕</button>
+    <div class="calc-popup-header">
+      <h3>🧮 What's the cheapest way for <em>you</em> to lose weight?</h3>
+      <p>Answer 3 quick questions — get a personalised cost estimate and timeline</p>
+    </div>
+    <div class="calc-popup-body">
+      <div class="calc-popup-features">
+        <div class="calc-popup-feat">💰 Real UK prices</div>
+        <div class="calc-popup-feat">📅 Months to goal</div>
+        <div class="calc-popup-feat">✅ Eligibility check</div>
+        <div class="calc-popup-feat">💊 Pills vs injections</div>
+      </div>
+      <button class="calc-popup-cta" onclick="openCalcTab()">Take the free quiz →</button>
+      <span class="calc-popup-skip" onclick="closeCalcPopup()">No thanks, just browsing</span>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-inner">
     <p><strong>Weight Loss Compare UK</strong> — weightlosscompare.co</p>
@@ -515,6 +625,151 @@ function renderSurgery(){const g=document.getElementById('surgeryGrid');if(!g)re
 
 const REFERRALS=[{name:'Slinic',type:'GLP-1 Injections',offer:'Free consultation',desc:'New patients get a free online consultation with a UK-registered clinician. No obligation to continue.',url:'https://slinic.co.uk',terms:'New patients only. Subject to eligibility.'},{name:'Bolt Pharmacy',type:'GLP-1 Injections',offer:'£20 off first order',desc:'Use code NEWBOLT20 at checkout for £20 off your first Mounjaro or Wegovy order.',url:'https://boltpharmacy.co.uk',terms:'New customers only. Cannot be combined.'},{name:'MedExpress',type:'GLP-1 Injections',offer:'Free next-day delivery',desc:'All new patients receive free next-day delivery on their first prescription order.',url:'https://medexpress.co.uk',terms:'New patients. Selected postcodes.'},{name:'Numan',type:'GLP-1 Injections',offer:'Free clinical review',desc:'Start with a free online health consultation. Pay only if prescribed and approved.',url:'https://numan.com',terms:'UK residents. Must meet clinical criteria.'},{name:'WW (Weight Watchers)',type:'Slimming Club',offer:'1 month free',desc:'New members can often get their first month free with WW app membership. Check WW website for current offer.',url:'https://ww.com/uk',terms:'New members only. Subscription continues unless cancelled.'},{name:'Slimming World',type:'Slimming Club',offer:'Free joining (seasonal)',desc:'Slimming World regularly runs free joining promotions. Check their website for the current offer in your area.',url:'https://slimmingworld.co.uk',terms:'Selected groups. Seasonal offers vary.'},{name:'Exante Diet',type:'Meal Replacement',offer:'Up to 40% off starter packs',desc:'New customers can save up to 40% on starter bundle packs. Use code STARTEXANTE at checkout.',url:'https://exante.eu/uk',terms:'New customers only. While stocks last.'},{name:'Noom',type:'App/Coaching',offer:'14-day free trial',desc:'Try Noom\'s full programme free for 14 days — no payment until trial ends. Cancel any time.',url:'https://noom.com',terms:'New users. Credit card required.'},{name:'Second Nature',type:'NHS-backed',offer:'Free via NHS referral',desc:'Second Nature may be available free through your GP for eligible patients.',url:'https://secondnature.io',terms:'NHS eligibility criteria apply. Ask your GP.'},{name:'Nutracheck',type:'App',offer:'7-day free trial',desc:'Full access to Nutracheck calorie counting app free for 7 days. No card needed.',url:'https://nutracheck.co.uk',terms:'New users only.'}];
 function renderReferrals(){const g=document.getElementById('referralGrid');if(!g)return;g.innerHTML=REFERRALS.map(r=>`<div class="referral-card"><div class="referral-card-head"><div><div class="referral-name">${r.name}</div><div class="referral-type">${r.type}</div></div><div class="referral-offer-badge">${r.offer}</div></div><div class="referral-desc">${r.desc}</div><a class="referral-link" href="${r.url}" target="_blank" rel="noopener">View Offer →</a><div class="referral-terms">*${r.terms}</div></div>`).join('')}
+
+// ── PILLS DATA ──────────────────────────────────────────────
+const PILLS_INFO=[
+  {
+    id:'orlistat120',
+    name:'Orlistat 120mg (Prescription)',
+    active:'Orlistat 120mg — 3× daily with meals',
+    type:'rx',
+    typeLabel:'Prescription Only',
+    efficacy:'Avg. 5–7% body weight loss at 12 months vs placebo',
+    monthMin:29,monthMax:45,
+    mechanism:'Blocks approximately 30% of dietary fat from being absorbed in the gut.',
+    howItWorks:'Take one capsule with each main meal (up to 3/day). Works best with a low-fat diet (less than 30% calories from fat). Side effects — including oily stools and urgency — are significantly reduced on a low-fat diet.',
+    eligibility:'Available to adults with BMI ≥30, or ≥28 with a weight-related health condition. Requires a prescription from a GP or UK-registered online clinician.',
+    evidence:'In randomised controlled trials, orlistat 120mg produced 5.8kg more weight loss than placebo over 12 months. NICE recommends as first-line pharmacotherapy before GLP-1 medications.',
+    pros:['Clinically proven and NICE-recommended','Cheapest prescription option from £29.95/month','Available from multiple online pharmacies','No appetite suppression side effects'],
+    cons:['Fatty stools and urgency if eating too much fat','Must follow a low-fat diet for best results','Weight typically returns when stopped','Less effective than GLP-1 injections']
+  },
+  {
+    id:'alli',
+    name:'Alli 60mg (Over-the-Counter)',
+    active:'Orlistat 60mg — 3× daily with meals',
+    type:'otc',
+    typeLabel:'No Prescription Needed',
+    efficacy:'Modest weight loss; lower dose than prescription orlistat',
+    monthMin:25,monthMax:34,
+    mechanism:'Half-strength version of prescription orlistat. Blocks ~25% of fat absorption. Available OTC from pharmacies without a prescription.',
+    howItWorks:'Same mechanism as prescription orlistat but at half the dose (60mg vs 120mg). Widely available in UK supermarket pharmacies and online without a prescription.',
+    eligibility:'Available OTC to adults over 18 with BMI ≥28. No prescription required. Available at Boots, Superdrug, Tesco, Sainsbury\'s, Lloyds Pharmacy and major online retailers.',
+    evidence:'The 60mg OTC dose produces less weight loss than the 120mg prescription dose. One large trial showed 3.3kg average weight loss over 6 months vs 1.9kg placebo. The prescription 120mg dose is more effective.',
+    pros:['No prescription needed — buy at pharmacy or supermarket','Cheapest weight loss treatment available','Widely available in UK high streets and online','Helps reinforce low-fat dietary habits'],
+    cons:['Less effective than prescription 120mg dose','Oily digestive side effects if eating high-fat meals','Weight returns when stopped — no long-term effect','Significantly less effective than GLP-1 medications']
+  },
+  {
+    id:'mysimba',
+    name:'Mysimba (Naltrexone/Bupropion)',
+    active:'Naltrexone 8mg + Bupropion 90mg — titrated over 4 weeks',
+    type:'rx',
+    typeLabel:'Prescription Only',
+    efficacy:'Avg. 6–9% body weight loss at 12 months',
+    monthMin:75,monthMax:99,
+    mechanism:'Dual-action: bupropion activates satiety centres in the brain; naltrexone blocks reward pathways that drive food cravings. Together they reduce appetite and the rewarding effect of eating.',
+    howItWorks:'Titrated gradually from 1 tablet/day to the full dose of 4 tablets/day over 4 weeks. Prescription only. Not suitable for patients with uncontrolled hypertension, epilepsy, or those taking opioid medications.',
+    eligibility:'Prescription only. Available for adults with BMI ≥30, or ≥27 with a weight-related condition. Contraindicated in hypertension, seizure disorders, opioid use. Requires clinician assessment.',
+    evidence:'The COR-I trial showed 6.1% placebo-subtracted weight loss at 56 weeks. More effective than orlistat but less effective than GLP-1 medications. Particularly noted for reducing food cravings and compulsive eating.',
+    pros:['Reduces cravings as well as appetite','More effective than orlistat at 12 months','Addresses psychological components of overeating','Oral tablet — no injections required'],
+    cons:['Prescription required with clinician assessment','Supply has been inconsistent in UK in 2025–2026','Not suitable for many patients (multiple contraindications)','Nausea, headache and insomnia common in first weeks','More expensive than orlistat at £75–£99/month']
+  }
+];
+
+const PILLS_PROVIDERS=[
+  // Orlistat 120mg (prescription)
+  {med:'orlistat120',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:29.95,type:'rx',note:'Online consultation included'},
+  {med:'orlistat120',provider:'Chemist Click',url:'https://chemistclick.co.uk',monthCost:29.99,type:'rx',note:'Online consultation included'},
+  {med:'orlistat120',provider:'Oxford Online Pharmacy',url:'https://oxfordonlinepharmacy.co.uk',monthCost:31.99,type:'rx',note:'Next-day delivery available'},
+  {med:'orlistat120',provider:'MedExpress',url:'https://medexpress.co.uk',monthCost:32.99,type:'rx',note:'UK-registered clinicians'},
+  {med:'orlistat120',provider:'Superdrug Online Doctor',url:'https://superdrug.com/pharmacy',monthCost:34.99,type:'rx',note:'Same-day collection available'},
+  {med:'orlistat120',provider:'Pharmacy2U',url:'https://pharmacy2u.co.uk',monthCost:34.99,type:'rx',note:'NHS pharmacy partner'},
+  {med:'orlistat120',provider:'Boots Online Doctor',url:'https://boots.com',monthCost:39.99,type:'rx',note:'Same-day collection available'},
+  // Alli 60mg OTC
+  {med:'alli',provider:'Amazon UK',url:'https://amazon.co.uk',monthCost:24.99,type:'otc',note:'84 capsules (1 month supply)'},
+  {med:'alli',provider:'Tesco Pharmacy',url:'https://tesco.com/pharmacy',monthCost:26.99,type:'otc',note:'84 capsules, in-store and online'},
+  {med:'alli',provider:'Sainsbury\'s Pharmacy',url:'https://sainsburys.co.uk',monthCost:27.99,type:'otc',note:'84 capsules, in-store'},
+  {med:'alli',provider:'Superdrug',url:'https://superdrug.com',monthCost:29.99,type:'otc',note:'84 capsules, in-store and online'},
+  {med:'alli',provider:'Lloyds Pharmacy',url:'https://lloydspharmacy.com',monthCost:31.99,type:'otc',note:'84 capsules'},
+  {med:'alli',provider:'Boots',url:'https://boots.com',monthCost:32.99,type:'otc',note:'84 capsules, in-store and online'},
+  // Mysimba (prescription)
+  {med:'mysimba',provider:'Chemist Click',url:'https://chemistclick.co.uk',monthCost:79.99,type:'rx',note:'Subject to stock availability'},
+  {med:'mysimba',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:89.99,type:'rx',note:'Subject to stock availability'},
+  {med:'mysimba',provider:'Boots Online Doctor',url:'https://boots.com',monthCost:94.99,type:'rx',note:'Subject to clinician assessment and stock'}
+];
+
+let pillsFilter='all';
+
+function renderPills(){
+  const el=document.getElementById('pillsContent');
+  if(!el||el.innerHTML.length>100)return; // already rendered
+  const filterHtml=`<div class="pill-info-box">⚠️ <strong>Important:</strong> Prescription weight loss pills require a consultation with a UK-registered clinician before dispensing. Always buy from a registered UK pharmacy (check the GPhC register). Do not buy prescription medication from unregulated online sources.</div>
+  <div class="pill-filter-row">
+    <span style="font-size:0.82rem;font-weight:600;color:var(--gray-600)">Show:</span>
+    <button class="pill-filter-btn active" id="pf-all" onclick="setPillFilter('all',this)">All medications</button>
+    <button class="pill-filter-btn" id="pf-rx" onclick="setPillFilter('rx',this)">💊 Prescription only</button>
+    <button class="pill-filter-btn" id="pf-otc" onclick="setPillFilter('otc',this)">🏪 Over-the-counter</button>
+  </div>`;
+  const overviewHtml=`<div class="pill-overview-grid" id="pillOverviewGrid">`+
+    PILLS_INFO.map(p=>`<div class="pill-overview-card ${p.type}" data-type="${p.type}">
+      <span class="pill-badge ${p.type}">${p.typeLabel}</span>
+      <h3>${p.name}</h3>
+      <div class="pill-active">Active ingredient: ${p.active}</div>
+      <div class="pill-efficacy">📊 ${p.efficacy}</div>
+      <p>${p.mechanism}</p>
+      <p style="font-size:0.77rem;color:var(--gray-500)">${p.eligibility}</p>
+      <div class="pill-cost-range">£${p.monthMin}–£${p.monthMax}<span>/month</span></div>
+      <details style="margin-top:0.75rem">
+        <summary style="font-size:0.78rem;font-weight:600;color:var(--primary);cursor:pointer">How it works &amp; evidence ▾</summary>
+        <div style="font-size:0.78rem;color:var(--gray-600);line-height:1.6;margin-top:0.5rem;padding:0.6rem;background:var(--gray-50);border-radius:8px">${p.evidence}</div>
+      </details>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-top:0.75rem;font-size:0.72rem">
+        <div><div style="font-weight:700;color:var(--green);margin-bottom:3px">✓ Pros</div>${p.pros.map(x=>`<div style="color:var(--gray-600);margin-bottom:2px">✓ ${x}</div>`).join('')}</div>
+        <div><div style="font-weight:700;color:var(--red);margin-bottom:3px">✗ Cons</div>${p.cons.map(x=>`<div style="color:var(--gray-600);margin-bottom:2px">✗ ${x}</div>`).join('')}</div>
+      </div>
+    </div>`).join('')+`</div>`;
+  const tableHtml=`<h3 style="font-size:1rem;font-weight:700;color:var(--gray-800);margin-bottom:0.75rem">💷 UK Provider Price Comparison</h3>
+  <div class="pill-providers-table-wrap">
+    <table class="pill-table" id="pillTable">
+      <thead><tr><th>Provider</th><th>Medication</th><th>Type</th><th>Monthly Cost</th><th>Notes</th><th></th></tr></thead>
+      <tbody id="pillTableBody"></tbody>
+    </table>
+  </div>
+  <div style="font-size:0.72rem;color:var(--gray-400);margin-top:0.4rem">🏆 = cheapest provider for that medication · Prices per month's supply · Always verify with provider before ordering</div>`;
+  el.innerHTML=filterHtml+overviewHtml+tableHtml;
+  renderPillsTable();
+}
+
+function setPillFilter(f,btn){
+  pillsFilter=f;
+  document.querySelectorAll('.pill-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  // filter overview cards
+  document.querySelectorAll('#pillOverviewGrid .pill-overview-card').forEach(card=>{
+    card.style.display=(f==='all'||card.dataset.type===f)?'block':'none';
+  });
+  renderPillsTable();
+}
+
+function renderPillsTable(){
+  const tb=document.getElementById('pillTableBody');
+  if(!tb)return;
+  const filtered=pillsFilter==='all'?PILLS_PROVIDERS:PILLS_PROVIDERS.filter(p=>p.type===pillsFilter);
+  // find cheapest per med
+  const cheapByMed={};
+  PILLS_PROVIDERS.forEach(p=>{if(!cheapByMed[p.med]||p.monthCost<cheapByMed[p.med])cheapByMed[p.med]=p.monthCost;});
+  tb.innerHTML=filtered.map(p=>{
+    const isCheap=p.monthCost===cheapByMed[p.med]&&pillsFilter!=='all'?false:(p.monthCost===cheapByMed[p.med]);
+    const info=PILLS_INFO.find(i=>i.id===p.med);
+    return`<tr class="${isCheap?'cheapest':''}">
+      <td><strong>${p.provider}</strong></td>
+      <td style="font-size:0.8rem">${info?info.name:p.med}</td>
+      <td><span class="${p.type==='otc'?'pill-otc-badge':'pill-rx-badge'}">${p.type==='otc'?'OTC':'Prescription'}</span></td>
+      <td><strong>£${p.monthCost.toFixed(2)}/mo</strong></td>
+      <td style="font-size:0.75rem;color:var(--gray-500)">${p.note}</td>
+      <td><a href="${p.url}" target="_blank" rel="noopener" class="pill-provider-link">Visit →</a></td>
+    </tr>`;
+  }).join('');
+}
 
 const BLOGS=[
 {title:'Best Weight Loss Programmes UK 2026: GLP-1, Meal Plans, Slimming Clubs & Surgery Compared',category:'Ultimate Guide',catClass:'cat-blue',emoji:'⚖️',bgGrad:'linear-gradient(135deg,#0c4a43,#0d9488)',date:'June 2026',readTime:'14 min read',excerpt:'Everything you need to know about weight loss options in the UK in 2026 — which method is cheapest, which gets the best results, and which is right for you.',content:`
@@ -1753,7 +2008,31 @@ const BLOGS=[
 function renderBlog(){const g=document.getElementById('blogGrid');const a=document.getElementById('blogArticle');if(g)g.style.display='grid';if(a)a.style.display='none';if(!g)return;g.innerHTML=BLOGS.map((b,i)=>`<div class="blog-card" onclick="openBlog(${i})" role="button" tabindex="0"><div class="blog-card-img" style="background:${b.bgGrad}">${b.emoji}</div><div class="blog-card-body"><span class="blog-cat ${b.catClass}">${b.category}</span><div class="blog-card-title">${b.title}</div><div class="blog-card-excerpt">${b.excerpt}</div><div class="blog-meta"><span>📅 ${b.date}</span><span>⏱ ${b.readTime}</span></div></div></div>`).join('')}
 function openBlog(i){const b=BLOGS[i];const g=document.getElementById('blogGrid');const a=document.getElementById('blogArticle');g.style.display='none';a.style.display='block';a.innerHTML=`<button class="blog-back" onclick="renderBlog()">← Back to all articles</button><div class="blog-article-head"><span class="blog-cat ${b.catClass}">${b.category}</span><h1>${b.title}</h1><div class="blog-article-meta"><span>📅 ${b.date}</span><span>⏱ ${b.readTime}</span><span>✍️ Weight Loss Compare UK</span></div></div><div class="blog-article-body">${b.content}</div>`;const el=document.getElementById('tab-blog');if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'})}
 
-function switchTab(name,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+name).classList.add('active');btn.classList.add('active');document.getElementById('filterBar').style.display=(name==='glp1')?'flex':'none';if(name==='meal')renderMealTable();if(name==='clubs')renderClubTable();if(name==='surgery')renderSurgery();if(name==='referrals')renderReferrals()}
+function switchTab(name,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+name).classList.add('active');btn.classList.add('active');document.getElementById('filterBar').style.display=(name==='glp1')?'flex':'none';if(name==='meal')renderMealTable();if(name==='clubs')renderClubTable();if(name==='surgery')renderSurgery();if(name==='referrals')renderReferrals();if(name==='pills')renderPills()}
+
+// ── CALCULATOR POPUP ────────────────────────────────────────
+function openCalcTab(){
+  closeCalcPopup();
+  const calcBtn=[...document.querySelectorAll('.tab-btn')].find(b=>b.textContent.includes('Calculator'));
+  if(calcBtn)switchTab('calc',calcBtn);
+  else window.open('./calculator.html','_blank');
+}
+function closeCalcPopup(){
+  document.getElementById('calcPopup').classList.remove('show');
+  try{localStorage.setItem('calcPopupSeen',Date.now());}catch(e){}
+}
+function maybeShowCalcPopup(){
+  try{
+    const seen=localStorage.getItem('calcPopupSeen');
+    if(seen&&Date.now()-parseInt(seen)<86400000)return; // once per day
+  }catch(e){}
+  setTimeout(()=>{
+    const p=document.getElementById('calcPopup');
+    if(p)p.classList.add('show');
+  },3000);
+}
+document.getElementById('calcPopup').addEventListener('click',function(e){if(e.target===this)closeCalcPopup();});
+maybeShowCalcPopup();
 
 function scrollToEmailForm(){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-glp1').classList.add('active');document.querySelector('.tab-btn').classList.add('active');document.getElementById('filterBar').style.display='flex';setTimeout(()=>document.getElementById('inlineEmailWrap').scrollIntoView({behavior:'smooth',block:'center'}),100)}
 

@@ -452,7 +452,8 @@ footer{background:var(--gray-800);color:var(--gray-400);padding:1.5rem 1rem;marg
     <div class="update-badge">✅ Prices last updated: June 2026 — refreshed every Monday</div>
   </div>
   <div class="table-wrap"><table id="priceTable"><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
-  <div style="margin-top:0.75rem;font-size:0.72rem;color:var(--gray-400)">🏆 = cheapest per dose across all providers &nbsp;|&nbsp; Prices are per month's supply</div>
+  <div style="margin-top:0.75rem;font-size:0.72rem;color:var(--gray-400)">🏆 = cheapest per dose across all providers &nbsp;|&nbsp; Prices are per month's supply (1 pen = 4 weekly doses)</div>
+  <div style="margin-top:0.5rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:0.6rem 0.85rem;font-size:0.75rem;color:#92400e;line-height:1.5">💡 <strong>Prices shown are listed medication costs (June 2026).</strong> Delivery fees (typically £2.99–£9.95) may apply on top. Some providers bundle needles, wipes &amp; sharps bins in the price; others charge separately. Introductory first-order discounts are <em>not</em> shown — always check the ongoing monthly price. Verify the total at checkout before ordering.</div>
   <div class="pill-hero" style="margin-top:2rem">
     <div class="pill-hero-text">
       <div class="pill-coming-soon">⏳ Coming Soon</div>
@@ -677,10 +678,12 @@ const PILLS_INFO=[
 
 const PILLS_PROVIDERS=[
   // Orlistat 120mg (prescription)
-  {med:'orlistat120',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:29.95,type:'rx',note:'Online consultation included'},
-  {med:'orlistat120',provider:'Chemist Click',url:'https://chemistclick.co.uk',monthCost:29.99,type:'rx',note:'Online consultation included'},
-  {med:'orlistat120',provider:'Oxford Online Pharmacy',url:'https://oxfordonlinepharmacy.co.uk',monthCost:31.99,type:'rx',note:'Next-day delivery available'},
+  {med:'orlistat120',provider:'PostMyMeds',url:'https://postmymeds.co.uk',monthCost:17.49,type:'rx',note:'Medication cost only — consultation fee may apply separately'},
+  {med:'orlistat120',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:29.95,type:'rx',note:'Consultation included in price'},
+  {med:'orlistat120',provider:'Oxford Online Pharmacy',url:'https://oxfordonlinepharmacy.co.uk',monthCost:29.99,type:'rx',note:'Consultation included, same-day dispatch'},
+  {med:'orlistat120',provider:'Chemist Click',url:'https://chemistclick.co.uk',monthCost:29.99,type:'rx',note:'Consultation included in price'},
   {med:'orlistat120',provider:'MedExpress',url:'https://medexpress.co.uk',monthCost:32.99,type:'rx',note:'UK-registered clinicians'},
+  {med:'orlistat120',provider:'Chemist4U',url:'https://chemist-4-u.com',monthCost:33.59,type:'rx',note:'Consultation included in price'},
   {med:'orlistat120',provider:'Superdrug Online Doctor',url:'https://superdrug.com/pharmacy',monthCost:34.99,type:'rx',note:'Same-day collection available'},
   {med:'orlistat120',provider:'Pharmacy2U',url:'https://pharmacy2u.co.uk',monthCost:34.99,type:'rx',note:'NHS pharmacy partner'},
   {med:'orlistat120',provider:'Boots Online Doctor',url:'https://boots.com',monthCost:39.99,type:'rx',note:'Same-day collection available'},
@@ -692,9 +695,10 @@ const PILLS_PROVIDERS=[
   {med:'alli',provider:'Lloyds Pharmacy',url:'https://lloydspharmacy.com',monthCost:31.99,type:'otc',note:'84 capsules'},
   {med:'alli',provider:'Boots',url:'https://boots.com',monthCost:32.99,type:'otc',note:'84 capsules, in-store and online'},
   // Mysimba (prescription)
-  {med:'mysimba',provider:'Chemist Click',url:'https://chemistclick.co.uk',monthCost:79.99,type:'rx',note:'Subject to stock availability'},
-  {med:'mysimba',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:89.99,type:'rx',note:'Subject to stock availability'},
-  {med:'mysimba',provider:'Boots Online Doctor',url:'https://boots.com',monthCost:94.99,type:'rx',note:'Subject to clinician assessment and stock'}
+  {med:'mysimba',provider:'Cloud Pharmacy',url:'https://cloudpharmacy.co.uk',monthCost:94.99,type:'rx',note:'Free online consultation included'},
+  {med:'mysimba',provider:'Oxford Online Pharmacy',url:'https://oxfordonlinepharmacy.co.uk',monthCost:99.99,type:'rx',note:'Subject to stock availability'},
+  {med:'mysimba',provider:'Simple Online Pharmacy',url:'https://simpleonlinepharmacy.co.uk',monthCost:104.99,type:'rx',note:'Subject to stock availability'},
+  {med:'mysimba',provider:'Boots Online Doctor',url:'https://boots.com',monthCost:109.99,type:'rx',note:'Subject to clinician assessment and stock'}
 ];
 
 let pillsFilter='all';
@@ -702,7 +706,7 @@ let pillsFilter='all';
 function renderPills(){
   const el=document.getElementById('pillsContent');
   if(!el||el.innerHTML.length>100)return; // already rendered
-  const filterHtml=`<div class="pill-info-box">⚠️ <strong>Important:</strong> Prescription weight loss pills require a consultation with a UK-registered clinician before dispensing. Always buy from a registered UK pharmacy (check the GPhC register). Do not buy prescription medication from unregulated online sources.</div>
+  const filterHtml=`<div class="pill-info-box">⚠️ <strong>Important:</strong> Prescription weight loss pills require a consultation with a UK-registered clinician before dispensing. Always buy from a registered UK pharmacy (check the GPhC register). Do not buy prescription medication from unregulated online sources.<br><br>💡 <strong>Prices shown are listed medication costs (June 2026).</strong> Delivery fees (typically £2.99–£9.95) may apply on top. Some providers include the online consultation in the price; others charge it separately. Introductory or first-order discounts are not shown — always check the ongoing monthly price before committing. Verify prices at checkout before ordering.</div>
   <div class="pill-filter-row">
     <span style="font-size:0.82rem;font-weight:600;color:var(--gray-600)">Show:</span>
     <button class="pill-filter-btn active" id="pf-all" onclick="setPillFilter('all',this)">All medications</button>
